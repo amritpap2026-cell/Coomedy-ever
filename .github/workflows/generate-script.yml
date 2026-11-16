@@ -1,0 +1,37 @@
+name: Generate Nepali comedy script
+
+on:
+  schedule:
+    # 18:00 Nepal Time (UTC+05:45) every Saturday.
+    - cron: "15 12 * * 6"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate script with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+        run: python scripts/generate_script.py
+
+      - name: Save generated script
+        uses: actions/upload-artifact@v4
+        with:
+          name: nepali-comedy-script-${{ github.run_id }}
+          path: output/*.md
+          if-no-files-found: error
+          retention-days: 30
