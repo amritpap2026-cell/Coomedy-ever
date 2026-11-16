@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "studio": "AI Mountain Comedy Studio",
+  "visual_style": "Photorealistic cinematic Nepali slice-of-life comedy; natural skin texture; believable anatomy; warm Himalayan morning light; no fantasy styling.",
+  "continuity_rules": [
+    "Treat each character_id as a permanent identity across every episode.",
+    "Never change a character's face shape, apparent age, skin tone, hairstyle, distinguishing features, signature outfit or voice profile unless the user explicitly edits that character.",
+    "For a two-person shot, show exactly the selected two characters and preserve their relative height and appearance.",
+    "Do not blend faces, swap clothing, duplicate a character, or invent a third speaking character.",
+    "Use the same reference-image prompt for all shots featuring that character; vary only pose, expression, camera framing and action."
+  ],
+  "pairings": {
+    "mother_son": {
+      "label_ne": "आमा–छोरा",
+      "setting_note": "A welcoming Nepali family balcony with two ceramic coffee cups.",
+      "characters": {
+        "A": {
+          "character_id": "ama_sushila_01",
+          "name": "सुशीला आमा",
+          "role": "आमा",
+          "apparent_age": "early 50s",
+          "face": "Warm oval face, softly defined cheekbones, kind dark-brown eyes, a small beauty mark near the left cheek.",
+          "skin": "Medium warm-brown Nepali skin tone with natural texture.",
+          "hair": "Black hair with a few silver strands, neatly tied in a low bun, a clean center part.",
+          "distinctive_details": "Small red tika, tiny gold nose stud, gentle expressive eyebrows.",
+          "wardrobe": "Fixed signature outfit: deep teal kurta, muted maroon shawl, simple gold stud earrings; no changing patterns or colors.",
+          "personality": "Quick-witted, affectionate, observant; wins arguments with calm one-line punchlines.",
+          "mannerisms": "Raises one eyebrow before a punchline, gives a knowing half-smile, stirs coffee slowly.",
+          "voice_ne": "Mature Nepali woman voice, warm mid register, clear Kathmandu-valley Nepali, measured pace, playful dry humour; never shrill.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Sushila, a Nepali mother in her early 50s, warm oval face, medium warm-brown skin, kind dark-brown eyes, small beauty mark near left cheek, black hair with a few silver strands in a neat low bun with center part, small red tika, tiny gold nose stud, deep teal kurta and muted maroon shawl. Calm witty expression. Chest-up, facing camera, soft natural Himalayan morning light, realistic skin texture, cinematic portrait, neutral uncluttered balcony background. Preserve this exact identity in all future images.",
+          "negative_prompt": "different person, younger face, changed hairstyle, loose hair, changed outfit, heavy makeup, exaggerated wrinkles, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark"
+        },
+        "B": {
+          "character_id": "chhoro_rohan_01",
+          "name": "रोहन",
+          "role": "छोरा",
+          "apparent_age": "mid 20s",
+          "face": "Slightly long youthful face, defined jaw, expressive dark-brown eyes, faint dimple on right cheek.",
+          "skin": "Medium tan Nepali skin tone.",
+          "hair": "Thick black hair, short sides and slightly tousled top.",
+          "distinctive_details": "Very light moustache and a tiny faint scar through the outer edge of the right eyebrow.",
+          "wardrobe": "Fixed signature outfit: mustard-yellow casual hoodie over a plain charcoal T-shirt; no logos.",
+          "personality": "Confident, tech-curious, easily caught in his own overthinking.",
+          "mannerisms": "Leans back when confident, gestures with his coffee cup, pauses and blinks when caught out.",
+          "voice_ne": "Young Nepali man voice, medium pitch, conversational Kathmandu Nepali, lively pace, clear consonants, slightly cheeky.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Rohan, a Nepali man in his mid 20s, slightly long youthful face, defined jaw, expressive dark-brown eyes, faint right-cheek dimple, medium tan skin, thick black hair with short sides and slightly tousled top, very light moustache, tiny faint scar at outer edge of right eyebrow. Mustard-yellow hoodie over plain charcoal T-shirt, no logos. Confident friendly expression. Chest-up, facing camera, soft natural Himalayan morning light, realistic skin texture, cinematic portrait, neutral uncluttered balcony background. Preserve this exact identity in all future images.",
+          "negative_prompt": "different person, beard, long hair, changed haircut, changed hoodie color, logos, sunglasses, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark"
+        }
+      }
+    },
+    "father_daughter": {
+      "label_ne": "बुबा–छोरी",
+      "setting_note": "A tidy family balcony with a small wooden table and two coffee cups.",
+      "characters": {
+        "A": {
+          "character_id": "buba_hari_01",
+          "name": "हरिप्रसाद",
+          "role": "बुबा",
+          "apparent_age": "late 50s",
+          "face": "Broad friendly face, softly square jaw, deep-set brown eyes, subtle smile lines.",
+          "skin": "Medium brown Nepali skin tone.",
+          "hair": "Short salt-and-pepper hair, neatly combed to the side.",
+          "distinctive_details": "Neatly trimmed salt-and-pepper moustache and thin rectangular reading glasses.",
+          "wardrobe": "Fixed signature outfit: light cream daura-suruwal style shirt with a slate-grey sleeveless waistcoat.",
+          "personality": "Patient, traditional in habits, quietly clever and fond of playful exaggeration.",
+          "mannerisms": "Adjusts glasses before explaining, cups coffee with both hands, smiles at his own logic.",
+          "voice_ne": "Mature Nepali man voice, warm low-mid register, steady pace, clear standard Nepali with gentle eastern-hill lilt.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Hariprasad, a Nepali father in his late 50s, broad friendly face, softly square jaw, deep-set brown eyes, medium brown skin, subtle smile lines, short salt-and-pepper hair neatly side-combed, neatly trimmed salt-and-pepper moustache, thin rectangular reading glasses. Light cream daura-suruwal style shirt and slate-grey sleeveless waistcoat. Patient amused expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, thick beard, no glasses, modern suit, changed waistcoat, exaggerated age, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        },
+        "B": {
+          "character_id": "chhori_isha_01",
+          "name": "इशा",
+          "role": "छोरी",
+          "apparent_age": "early 20s",
+          "face": "Heart-shaped face, bright dark-brown eyes, softly arched eyebrows, confident smile.",
+          "skin": "Medium-light warm Nepali skin tone.",
+          "hair": "Long black hair in a neat low ponytail, a few natural loose strands near temples.",
+          "distinctive_details": "Small silver stud earrings and a tiny dimple on the left cheek.",
+          "wardrobe": "Fixed signature outfit: dusty-rose kurta with a simple navy-blue cardigan.",
+          "personality": "Modern, sharp, curious and lovingly sarcastic; explains things with witty examples.",
+          "mannerisms": "Tilts head when questioning, gives a quick side-eye, smiles before correcting her father.",
+          "voice_ne": "Young Nepali woman voice, bright medium register, natural Kathmandu Nepali, crisp diction, quick but not rushed.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Isha, a Nepali woman in her early 20s, heart-shaped face, bright dark-brown eyes, softly arched eyebrows, medium-light warm Nepali skin, long black hair in a neat low ponytail with a few natural strands near temples, small silver stud earrings, tiny left-cheek dimple. Dusty-rose kurta and simple navy-blue cardigan. Confident warm smile. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, short hair, heavy makeup, changed clothing, western business suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        }
+      }
+    },
+    "husband_wife": {
+      "label_ne": "श्रीमान्–श्रीमती",
+      "setting_note": "A cosy apartment balcony with two coffee cups and mountain views.",
+      "characters": {
+        "A": {
+          "character_id": "shreeman_bikash_01",
+          "name": "विकास",
+          "role": "श्रीमान्",
+          "apparent_age": "early 30s",
+          "face": "Rectangular face, strong but friendly jawline, expressive brown eyes.",
+          "skin": "Medium tan Nepali skin tone.",
+          "hair": "Short black hair, tidy side fade with a slightly wavy top.",
+          "distinctive_details": "Short neat stubble and a small crease in the left cheek when smiling.",
+          "wardrobe": "Fixed signature outfit: forest-green casual overshirt over a plain white T-shirt.",
+          "personality": "Big planner, optimistic, loves sounding like an expert even when guessing.",
+          "mannerisms": "Makes confident hand gestures, nods to himself, takes a sip after making a bold claim.",
+          "voice_ne": "Nepali man voice in early 30s, medium-low register, relaxed Kathmandu accent, confident measured delivery with comic pauses.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Bikash, a Nepali man in his early 30s, rectangular face, friendly strong jawline, expressive brown eyes, medium tan skin, short black hair with tidy side fade and slightly wavy top, short neat stubble, small left-cheek crease when smiling. Forest-green casual overshirt over plain white T-shirt. Confident relaxed expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, long beard, long hair, changed overshirt, tie, suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        },
+        "B": {
+          "character_id": "shreemati_mina_01",
+          "name": "मीना",
+          "role": "श्रीमती",
+          "apparent_age": "early 30s",
+          "face": "Soft diamond-shaped face, alert dark-brown eyes, defined eyebrows and a knowing smile.",
+          "skin": "Medium warm-brown Nepali skin tone.",
+          "hair": "Black shoulder-length hair, softly waved and tucked behind the right ear.",
+          "distinctive_details": "Tiny maroon bindi and small gold hoop earrings.",
+          "wardrobe": "Fixed signature outfit: indigo-blue kurta with a muted mustard scarf.",
+          "personality": "Practical, perceptive, calm under pressure and usually two steps ahead.",
+          "mannerisms": "Looks over her coffee cup before a punchline, folds arms lightly, gives a restrained smile.",
+          "voice_ne": "Nepali woman voice in early 30s, warm medium register, fluent Kathmandu Nepali, composed pace, dry comic timing.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Mina, a Nepali woman in her early 30s, soft diamond-shaped face, alert dark-brown eyes, defined eyebrows, medium warm-brown skin, black shoulder-length softly waved hair tucked behind right ear, tiny maroon bindi, small gold hoop earrings. Indigo-blue kurta and muted mustard scarf. Calm knowing smile. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, long hair, changed hairstyle, changed scarf, heavy jewellery, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        }
+      }
+    },
+    "brother_sister": {
+      "label_ne": "दाजु–बहिनी",
+      "setting_note": "A relaxed shared-family balcony with two mugs and a mountain sunrise.",
+      "characters": {
+        "A": {
+          "character_id": "daju_samir_01",
+          "name": "समीर दाजु",
+          "role": "दाजु",
+          "apparent_age": "late 20s",
+          "face": "Oval-rectangular face, slightly raised eyebrows, lively dark eyes.",
+          "skin": "Medium brown Nepali skin tone.",
+          "hair": "Thick black hair, short and brushed upward at the front.",
+          "distinctive_details": "A small mole below the right side of the lower lip; clean-shaven.",
+          "wardrobe": "Fixed signature outfit: rust-orange zip jacket over a dark navy T-shirt.",
+          "personality": "Thinks he is the family genius, competitive, playful and easy to outsmart.",
+          "mannerisms": "Points one finger while explaining, sits forward when challenged, laughs awkwardly when caught.",
+          "voice_ne": "Young Nepali man voice, medium register, casual Kathmandu Nepali, energetic and slightly boastful.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Sameer, a Nepali man in his late 20s, oval-rectangular face, raised expressive eyebrows, lively dark eyes, medium brown skin, thick short black hair brushed upward at front, small mole below right side of lower lip, clean-shaven. Rust-orange zip jacket over dark navy T-shirt. Playfully confident expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, moustache, beard, long hair, changed jacket, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        },
+        "B": {
+          "character_id": "bahini_prakriti_01",
+          "name": "प्रकृति",
+          "role": "बहिनी",
+          "apparent_age": "early 20s",
+          "face": "Round-oval face, lively dark-brown eyes, expressive eyebrows and a mischievous grin.",
+          "skin": "Medium warm Nepali skin tone.",
+          "hair": "Long black hair in a single neat braid over the left shoulder.",
+          "distinctive_details": "Small blue hair tie and tiny silver nose pin.",
+          "wardrobe": "Fixed signature outfit: lavender kurta with a white cotton scarf.",
+          "personality": "Playful, observant, sarcastic and excellent at exposing her brother's exaggerations.",
+          "mannerisms": "Leans toward him with a teasing grin, taps the table lightly, glances at camera after a joke.",
+          "voice_ne": "Young Nepali woman voice, medium-high but natural register, clear Kathmandu Nepali, lively pace and crisp punchlines.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Prakriti, a Nepali woman in her early 20s, round-oval face, lively dark-brown eyes, expressive eyebrows, medium warm Nepali skin, long black hair in a single neat braid over left shoulder, small blue hair tie, tiny silver nose pin. Lavender kurta and white cotton scarf. Mischievous friendly grin. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, loose hair, ponytail, changed braid, changed outfit, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        }
+      }
+    },
+    "two_friends": {
+      "label_ne": "दुई साथी",
+      "setting_note": "A simple rooftop balcony cafe corner with two coffee cups and a distant Himalayan ridge.",
+      "characters": {
+        "A": {
+          "character_id": "sathi_nischal_01",
+          "name": "निश्चल",
+          "role": "साथी १",
+          "apparent_age": "late 20s",
+          "face": "Long oval face, bright observant eyes, relaxed smile.",
+          "skin": "Medium tan Nepali skin tone.",
+          "hair": "Short wavy black hair, naturally messy at the front.",
+          "distinctive_details": "Thin black rectangular glasses and a faint moustache.",
+          "wardrobe": "Fixed signature outfit: cobalt-blue sweatshirt with no logo.",
+          "personality": "Overconfident dreamer, starts ambitious plans and improvises explanations.",
+          "mannerisms": "Talks with both hands, leans toward the listener, smiles proudly at questionable ideas.",
+          "voice_ne": "Nepali man voice in late 20s, medium pitch, friendly Kathmandu Nepali, quick enthusiastic delivery.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Nischal, a Nepali man in his late 20s, long oval face, bright observant eyes, medium tan skin, short naturally wavy black hair slightly messy at front, thin black rectangular glasses, faint moustache. Cobalt-blue plain sweatshirt with no logo. Enthusiastic friendly expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, rooftop balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, no glasses, thick beard, changed hairstyle, changed sweatshirt, logo, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        },
+        "B": {
+          "character_id": "sathi_ujjwal_01",
+          "name": "उज्ज्वल",
+          "role": "साथी २",
+          "apparent_age": "late 20s",
+          "face": "Broad oval face, steady dark-brown eyes, subtle dimple on left cheek.",
+          "skin": "Medium-deep brown Nepali skin tone.",
+          "hair": "Short neatly trimmed black hair with a clean natural hairline.",
+          "distinctive_details": "Neatly shaped short beard and a tiny silver ear stud in the left ear.",
+          "wardrobe": "Fixed signature outfit: charcoal-grey checked casual shirt, sleeves folded once.",
+          "personality": "Grounded, analytical, quietly funny and skilled at puncturing nonsense with facts.",
+          "mannerisms": "Listens without interrupting, raises one eyebrow, delivers punchlines in a calm tone.",
+          "voice_ne": "Nepali man voice in late 20s, low-mid register, measured Kathmandu Nepali, dry humour and clean diction.",
+          "reference_image_prompt": "Photorealistic consistent character portrait of Ujjwal, a Nepali man in his late 20s, broad oval face, steady dark-brown eyes, medium-deep brown skin, subtle left-cheek dimple, short neatly trimmed black hair with natural hairline, neatly shaped short beard, tiny silver stud in left ear. Charcoal-grey checked casual shirt with sleeves folded once. Calm amused expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, rooftop balcony background. Preserve exact identity.",
+          "negative_prompt": "different person, clean-shaven, long beard, long hair, changed shirt, suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+        }
+      }
+    }
+  }
+}
