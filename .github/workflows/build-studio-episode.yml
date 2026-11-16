@@ -1,0 +1,43 @@
+name: Build Nepali Comedy Episode
+on:
+  workflow_dispatch:
+    inputs:
+      format:
+        description: Episode format
+        required: true
+        type: choice
+        options: [short, long]
+        default: short
+      pairing:
+        description: Character pairing
+        required: true
+        type: choice
+        options: [mother_son, father_daughter, husband_wife, brother_sister, two_friends]
+        default: mother_son
+      topic:
+        description: Optional episode topic
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Generate episode package
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+        run: python studio/generate_episode.py --format "${{ inputs.format }}" --pairing "${{ inputs.pairing }}" --topic "${{ inputs.topic }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nepali-comedy-${{ inputs.format }}-${{ github.run_id }}
+          path: output/**
+          if-no-files-found: error
+          retention-days: 30
