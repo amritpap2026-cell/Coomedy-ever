@@ -114,7 +114,7 @@ def calendar_event_names(calendar):
     return list(dict.fromkeys(result))
 
 
-def build_prompt(fmt, pairing_id, topic, profiles, calendar):
+def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
     pairing = profiles["pairings"][pairing_id]
     characters = pairing["characters"]
     duration, ratio, words = (
@@ -163,6 +163,7 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar):
         "youtube_title": "...",
         "description": "...",
         "tags": ["..."],
+        "series_continuity": {"timeline_summary": "...", "previous_episode_recap": "...", "current_situation": "...", "character_state": {}, "ongoing_story_arcs": [], "unresolved_threads": [], "running_gags": [], "new_episode_hook": "..."},
         "comedy_quality_check": {"hook_strength": "...", "main_satirical_target": "...", "escalation": "...", "final_punchline": "...", "callback": "..."},
     }
     identity_block = {
@@ -205,7 +206,7 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar):
         "विरोधाभास वा पर्वका वास्तविक चलनमा केन्द्रित हुन सक्छ। गाली, अश्लीलता वा कमजोरमाथि प्रहारलाई हास्य नबनाउनुहोस्। "
         "जात, धर्म, लिङ्ग, अपाङ्गता वा समुदायलाई होच्याएर हँसाउने काम नगर्नुहोस्; व्यंग्य व्यवहार र शक्तिको दुरुपयोगमाथि होस्। "
         "फजुल filler, घिसेपिटे चुट्किला, जबर्जस्ती rhyme र व्याख्या गर्नुपर्ने punchline नलेख्नुहोस्। "
-        "हरेक episode मा फरक premise, comic mechanism र अन्त्य रोज्नुहोस्; एउटै template नदोहोर्‍याउनुहोस्। "
+        "हरेक episode नयाँ premise भए पनि एउटै निरन्तर series को भाग हुनुपर्छ। अघिल्लो episode को घटना र परिणामबाटै आजको कथा अघि बढाउनुहोस्। कथा कहिल्यै reset वा समाप्त नगर्नुहोस्। पात्रले पुराना घटना सम्झनुपर्छ; सम्बन्ध, निर्णय र समस्याहरू समयसँगै विकसित हुनुपर्छ। एउटा मुख्य कथा-धागो लामो समय चलाउनुहोस्, सबै समस्या एउटै भागमा समाधान नगर्नुहोस्। हरेक भागमा बलियो punchline सँगै अर्को भागतर्फ तान्ने cliffhanger वा खुला hook राख्नुहोस्। अघिल्लो घटनासँग नमिल्ने कुरा नलेख्नुहोस्। "
         "दुवै पात्रलाई अर्थपूर्ण र हास्यास्पद भूमिका दिनुहोस्। "
         "तलका character profiles स्थायी canon हुन्: अनुहार, उमेर, छाला, कपाल, चिनारी, व्यक्तित्व वा आवाज नबदल्नुहोस्। "
         "हरेक नयाँ episode मा कथाअनुसार नयाँ पोसाक छान्न सकिन्छ; तर एउटै episode का सबै shot र angle मा "
@@ -214,6 +215,7 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar):
         "प्रत्येक संवादमा speaker_id, emotion, action र shot_id अनिवार्य राख्नुहोस्। "
         "आजको नेपाली पात्रोअनुसार विशेष पर्व वा दिवस छ भने त्यसको संस्कृति, खानपान, चलन र पारिवारिक परिवेशलाई कथामा स्वाभाविक रूपमा समेट्नुहोस्। पर्वको नाम मात्र उल्लेख नगर्नुहोस्; त्यसैअनुसार मौलिक punchline बनाउनुहोस्। आज विशेष पर्व छैन भने जबर्जस्ती पर्व नथप्नुहोस्। पात्रोमा नभएका मिति वा सांस्कृतिक तथ्य नबनाउनुहोस्। अपमानजनक वा घृणायुक्त मजाक नगर्नुहोस्। JSON मात्र फर्काउनुहोस्.\n"
         "NEPALI CALENDAR CONTEXT: " + json.dumps(calendar_context, ensure_ascii=False) + "\n"
+        "SERIES MEMORY — continue this exact timeline: " + json.dumps(series_state, ensure_ascii=False) + "\n"
         "PERMANENT CHARACTER CANON: "
         + json.dumps(identity_block, ensure_ascii=False)
         + "\nREFERENCE IMAGE PROMPTS: "
@@ -238,7 +240,9 @@ def main():
     model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     calendar = load_nepali_calendar(args.date)
-    prompt = build_prompt(args.format, args.pairing, args.topic, profiles, calendar)
+    state_path = ROOT / "series_state.json"
+    series_state = json.loads(state_path.read_text(encoding="utf-8"))
+    prompt = build_prompt(args.format, args.pairing, args.topic, profiles, calendar, series_state)
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
@@ -267,6 +271,24 @@ def main():
         sys.exit("Episode has no shots or dialogue.")
     if {line.get("speaker_id") for line in data["dialogue"]} - {"A", "B"}:
         sys.exit("Invalid speaker_id in dialogue.")
+
+    next_state = data.get("series_continuity")
+    required_state = ("timeline_summary", "previous_episode_recap", "current_situation", "character_state", "ongoing_story_arcs", "unresolved_threads", "running_gags", "new_episode_hook")
+    if not isinstance(next_state, dict) or any(k not in next_state for k in required_state):
+        sys.exit("Missing complete series_continuity; refusing disconnected episode.")
+    next_state["episode_number"] = int(series_state.get("episode_number", 0)) + 1
+    next_state["story_day"] = int(series_state.get("story_day", 0)) + 1
+    next_state["last_episode_date_ad"] = calendar.get("ad_date", "")
+    next_state["last_episode_title"] = data.get("title", "")
+    next_state["last_pairing"] = args.pairing
+    next_state["series_title"] = series_state.get("series_title", "हिमालको बाल्कोनी — कहिल्यै नसकिने गफ")
+    recent = list(series_state.get("recent_premises", []))
+    recent.append(data.get("logline", data.get("title", "")))
+    next_state["recent_premises"] = recent[-30:]
+    state_path.write_text(json.dumps(next_state, ensure_ascii=False, indent=2) + chr(10), encoding="utf-8")
+    data["series_continuity"] = next_state
+    data["series_episode_number"] = next_state["episode_number"]
+    data["series_title"] = next_state["series_title"]
 
     # Attach the authoritative character identities and image prompts to every episode package.
     selected = profiles["pairings"][args.pairing]["characters"]
