@@ -117,6 +117,11 @@ def calendar_event_names(calendar):
 def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
     pairing = profiles["pairings"][pairing_id]
     characters = pairing["characters"]
+    next_episode_number = int(series_state.get("episode_number", 0)) + 1
+    selected_outfits = {
+        speaker_id: characters[speaker_id]["outfit_options"][(next_episode_number - 1) % len(characters[speaker_id]["outfit_options"])]
+        for speaker_id in ("A", "B")
+    }
     duration, ratio, words = (
         ("30–50 seconds", "9:16", "75–115")
         if fmt == "short"
@@ -132,7 +137,8 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
                 "character_id": characters[speaker_id]["character_id"],
                 "name": characters[speaker_id]["name"],
                 "visual_identity": "Use the supplied permanent profile without changing it.",
-                "wardrobe": characters[speaker_id]["wardrobe"],
+                "wardrobe": selected_outfits[speaker_id]["description"],
+                "outfit_id": selected_outfits[speaker_id]["outfit_id"],
                 "voice": characters[speaker_id]["voice_ne"],
             }
             for speaker_id in ("A", "B")
@@ -216,7 +222,9 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
         "आजको नेपाली पात्रोअनुसार विशेष पर्व वा दिवस छ भने त्यसको संस्कृति, खानपान, चलन र पारिवारिक परिवेशलाई कथामा स्वाभाविक रूपमा समेट्नुहोस्। पर्वको नाम मात्र उल्लेख नगर्नुहोस्; त्यसैअनुसार मौलिक punchline बनाउनुहोस्। आज विशेष पर्व छैन भने जबर्जस्ती पर्व नथप्नुहोस्। पात्रोमा नभएका मिति वा सांस्कृतिक तथ्य नबनाउनुहोस्। अपमानजनक वा घृणायुक्त मजाक नगर्नुहोस्। JSON मात्र फर्काउनुहोस्.\n"
         "NEPALI CALENDAR CONTEXT: " + json.dumps(calendar_context, ensure_ascii=False) + "\n"
         "SERIES MEMORY — continue this exact timeline: " + json.dumps(series_state, ensure_ascii=False) + "\n"
-        "PERMANENT CHARACTER CANON: "
+        "SELECTED OUTFITS FOR THIS EPISODE (must remain identical in every shot): "
+        + json.dumps(selected_outfits, ensure_ascii=False)
+        + "\nPERMANENT CHARACTER CANON: "
         + json.dumps(identity_block, ensure_ascii=False)
         + "\nREFERENCE IMAGE PROMPTS: "
         + json.dumps(reference_prompts, ensure_ascii=False)
@@ -295,6 +303,14 @@ def main():
     data["studio_character_profiles"] = {
         speaker_id: selected[speaker_id] for speaker_id in ("A", "B")
     }
+    data["selected_outfits"] = {
+        speaker_id: {
+            **selected_outfits[speaker_id],
+            "character_id": selected[speaker_id]["character_id"],
+            "character_name": selected[speaker_id]["name"],
+        }
+        for speaker_id in ("A", "B")
+    }
     data["nepali_calendar"] = calendar
     data.update({
         "format": args.format,
@@ -319,7 +335,7 @@ def main():
         character = selected[speaker_id]
         lines.append(
             f"- **{character['name']}** ({character['character_id']}): "
-            f"{character['apparent_age']}; {character['wardrobe']}"
+            f"{character['apparent_age']}; Outfit: {selected_outfits[speaker_id]['name']} — {selected_outfits[speaker_id]['description']}"
         )
     lines.extend(["", "## संवाद"])
     for line in data["dialogue"]:
