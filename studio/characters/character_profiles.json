@@ -74,10 +74,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -140,10 +141,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -212,10 +214,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -278,10 +281,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -350,10 +354,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -416,10 +421,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -488,10 +494,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -554,10 +561,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -626,10 +634,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -692,10 +701,11 @@
           "language_profile": {
             "language": "Nepali",
             "script": "Devanagari",
-            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
             "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
             "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register.",
+            "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
           },
           "voice_lock": {
             "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -770,10 +780,11 @@
       "language_profile": {
         "language": "Nepali",
         "script": "Devanagari",
-        "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+        "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
         "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
         "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-        "dialogue_register": "Simple, age-appropriate natural Nepali."
+        "dialogue_register": "Simple, age-appropriate natural Nepali.",
+        "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
       },
       "voice_lock": {
         "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -836,10 +847,11 @@
       "language_profile": {
         "language": "Nepali",
         "script": "Devanagari",
-        "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+        "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
         "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
         "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-        "dialogue_register": "Simple, age-appropriate natural Nepali."
+        "dialogue_register": "Simple, age-appropriate natural Nepali.",
+        "code_switching": "Use familiar English words naturally when Nepali speakers commonly use them (e.g. फोन, मोबाइल, स्कूल, कलेज, अफिस, प्लान, आइडिया, टेन्सन, प्रोग्राम, सरी, थ्याङ्क यू). Do not force English into every sentence, and do not translate common English loanwords into stiff or unnatural pure Nepali. Match the amount and type of English to the character's age, education, profession, region and personality."
       },
       "voice_lock": {
         "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
@@ -851,14 +863,32 @@
   "nepali_language_voice_policy": {
     "language": "Nepali",
     "language_script": "देवनागरी",
-    "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+    "dialect": "नेपालमा दैनिक बोलिने सहज, प्राकृतिक नेपाली; पात्रको उमेर, शिक्षा, पेशा, क्षेत्र र स्वभावअनुसार हल्का English मिसिन सक्ने बोलचाल।",
     "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
     "voice_lock": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
     "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
-    "dialogue": "Write dialogue in Devanagari. Use natural family/friend registers, age-appropriate vocabulary for children, distinct character personalities, and comedic timing. Avoid translating English jokes literally.",
+    "dialogue": "Write fluent, natural spoken Nepali in Devanagari, not textbook or mechanically translated Nepali. Allow familiar English words and short phrases where Nepali speakers naturally code-switch. Never force pure Nepali translations for common everyday English words, and never insert English just for decoration. Vary code-switching by character age, education, profession, region, relationship and personality. Use age-appropriate vocabulary for children; let older adults and younger adults sound distinct. Use natural fillers, contractions, interruptions, reactions, local idioms and conversational rhythm. Avoid literal translations, stiff formal phrasing and repetitive catchphrases.",
     "tts": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated.",
     "audio": "Generate each speaker's dialogue as separate audio segments with speaker ID, then align lip-sync to that speaker only. Keep ambience and SFX on separate tracks.",
     "child_safety": "Child voices and dialogue must remain age-appropriate and clearly childlike; never use adult voice profiles for children.",
-    "model_policy": "Pin an explicit TTS provider and model version in configuration. Do not assume a model or voice ID exists until tested and configured."
+    "model_policy": "Pin an explicit TTS provider and model version in configuration. Do not assume a model or voice ID exists until tested and configured.",
+    "code_switching": {
+      "principle": "Natural Nepali-English code-switching, not pure-Nepali translation and not unnecessary English overload.",
+      "examples": [
+        "फोन",
+        "मोबाइल",
+        "स्कूल",
+        "कलेज",
+        "अफिस",
+        "प्लान",
+        "आइडिया",
+        "टेन्सन",
+        "प्रोग्राम",
+        "सरी",
+        "थ्याङ्क यू"
+      ],
+      "age_guidance": "Children use simple familiar words; teenagers and young adults may naturally use more everyday English; middle-aged and older adults use the mix that fits their background and personality. Do not stereotype or assign English fluency solely by age.",
+      "rule": "Preserve commonly used English words in Nepali speech when they sound natural. Translate only when the character would naturally choose a Nepali equivalent."
+    }
   }
 }
