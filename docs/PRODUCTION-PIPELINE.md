@@ -2,6 +2,10 @@
 
 ## Implemented
 
+- Persistent never-ending serial memory in `studio/series_state.json`: episode number, story day, recap, current situation, character state, ongoing arcs, unresolved threads, running gags and recent premises.
+- Episode generator reads the previous series state and requires Gemini to return a complete continuity update; it refuses to package an episode if that update is missing.
+- GitHub Actions is configured to commit the updated series state after a successful generation so the next run continues from the previous episode.
+
 - Short (30–50 seconds, 9:16) and long (1–2 minutes, 16:9) choices.
 - Five selectable Nepali character pairings.
 - Ten original recurring character profiles in `studio/characters/character_profiles.json`.
