@@ -169,9 +169,11 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
         "youtube_title": "...",
         "description": "...",
         "tags": ["..."],
-        "series_continuity": {"timeline_summary": "...", "previous_episode_recap": "...", "current_situation": "...", "character_state": {}, "ongoing_story_arcs": [], "unresolved_threads": [], "running_gags": [], "new_episode_hook": "..."},
+        "series_continuity": {"story_elapsed_years": 0, "timeline_summary": "...", "previous_episode_recap": "...", "current_situation": "...", "character_state": {}, "ongoing_story_arcs": [], "unresolved_threads": [], "running_gags": [], "new_episode_hook": "..."},
         "comedy_quality_check": {"hook_strength": "...", "main_satirical_target": "...", "escalation": "...", "final_punchline": "...", "callback": "..."},
     }
+    child_identity_block = {child_id: {k: v for k, v in child.items() if k not in ("reference_image_prompt", "negative_prompt")} for child_id, child in supporting.items()}
+    child_reference_prompts = {child_id: {"reference_image_prompt": child["reference_image_prompt"], "negative_prompt": child["negative_prompt"]} for child_id, child in supporting.items()}
     identity_block = {
         speaker_id: {
             key: value
@@ -285,6 +287,7 @@ def main():
     if not isinstance(next_state, dict) or any(k not in next_state for k in required_state):
         sys.exit("Missing complete series_continuity; refusing disconnected episode.")
     next_state["episode_number"] = int(series_state.get("episode_number", 0)) + 1
+    next_state["story_elapsed_years"] = max(elapsed_years, float(next_state.get("story_elapsed_years", elapsed_years)))
     next_state["story_day"] = int(series_state.get("story_day", 0)) + 1
     next_state["last_episode_date_ad"] = calendar.get("ad_date", "")
     next_state["last_episode_title"] = data.get("title", "")
@@ -311,6 +314,15 @@ def main():
         }
         for speaker_id in ("A", "B")
     }
+    data["recurring_children"] = {
+        child_id: {
+            **child,
+            "current_age_years": child["starting_age_years"] + int(next_state["story_elapsed_years"]),
+            "selected_outfit": child_outfits[child_id],
+        }
+        for child_id, child in supporting.items()
+    }
+    data["selected_outfits"] = {speaker_id: {**selected_outfits[speaker_id], "character_id": selected[speaker_id]["character_id"], "character_name": selected[speaker_id]["name"]} for speaker_id in ("A", "B")}
     data["nepali_calendar"] = calendar
     data.update({
         "format": args.format,
@@ -337,6 +349,9 @@ def main():
             f"- **{character['name']}** ({character['character_id']}): "
             f"{character['apparent_age']}; Outfit: {selected_outfits[speaker_id]['name']} — {selected_outfits[speaker_id]['description']}"
         )
+    lines.extend(["", "## स्थायी बाल पात्र"])
+    for child_id, child in supporting.items():
+        lines.append(f"- **{child['name']}**: {child['starting_age_years'] + int(next_state['story_elapsed_years'])} वर्ष; Outfit: {child_outfits[child_id]['name']} — {child_outfits[child_id]['description']}")
     lines.extend(["", "## संवाद"])
     for line in data["dialogue"]:
         speaker = selected[line["speaker_id"]]["name"]
