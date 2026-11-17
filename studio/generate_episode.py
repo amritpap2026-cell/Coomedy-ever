@@ -435,21 +435,21 @@ def main():
     (output / "episode.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     thumbnail_template = THUMBNAIL_TEMPLATE.format(episode_number=next_state["episode_number"])
     thumbnail_package = (
-        f"STUDIO BRAND: AI MOUNTAIN COMEDY STUDIO\\n"
-        f"EPISODE NUMBER: {next_state['episode_number']}\\n"
-        f"EPISODE BADGE: EPISODE {next_state['episode_number']:03d}\\n"
-        f"PAIRING ID: {args.pairing}\\n"
-        f"PAIRING LABEL: {profiles['pairings'][args.pairing]['label_ne']}\\n"
-        f"MAIN CHARACTER A: {selected['A']['name']} | ID: {selected['A']['character_id']} | OUTFIT: {selected_outfits['A']['description']}\\n"
-        f"MAIN CHARACTER B: {selected['B']['name']} | ID: {selected['B']['character_id']} | OUTFIT: {selected_outfits['B']['description']}\\n"
-        f"EPISODE TITLE: {data['title']}\\n"
-        f"NEPALI HEADLINE: {data.get('thumbnail_headline_ne', data['title'])}\\n\\n"
+        f"STUDIO BRAND: AI MOUNTAIN COMEDY STUDIO\n"
+        f"EPISODE NUMBER: {next_state['episode_number']}\n"
+        f"EPISODE BADGE: EPISODE {next_state['episode_number']:03d}\n"
+        f"PAIRING ID: {args.pairing}\n"
+        f"PAIRING LABEL: {profiles['pairings'][args.pairing]['label_ne']}\n"
+        f"MAIN CHARACTER A: {selected['A']['name']} | ID: {selected['A']['character_id']} | OUTFIT: {selected_outfits['A']['description']}\n"
+        f"MAIN CHARACTER B: {selected['B']['name']} | ID: {selected['B']['character_id']} | OUTFIT: {selected_outfits['B']['description']}\n"
+        f"EPISODE TITLE: {data['title']}\n"
+        f"NEPALI HEADLINE: {data.get('thumbnail_headline_ne', data['title'])}\n\n"
         + thumbnail_template
-        + "\\nCHARACTER REFERENCE PROMPTS — preserve the exact two identities:\\n"
+        + "\nCHARACTER REFERENCE PROMPTS — preserve the exact two identities:\n"
         + json.dumps({speaker_id: selected[speaker_id]['reference_image_prompt'] for speaker_id in ('A', 'B')}, ensure_ascii=False)
-        + "\\nEPISODE-SPECIFIC TWO-CHARACTER STORY MOMENT (keep fixed branding unchanged):\\n"
+        + "\nEPISODE-SPECIFIC TWO-CHARACTER STORY MOMENT (keep fixed branding unchanged):\n"
         + data["thumbnail_prompt"].strip()
-        + "\\n"
+        + "\n"
     )
     (output / "thumbnail_prompt.txt").write_text(thumbnail_package, encoding="utf-8")
     print(f"Generated episode package: {output}")
