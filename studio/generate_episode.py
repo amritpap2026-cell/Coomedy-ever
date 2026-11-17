@@ -228,6 +228,12 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
         + json.dumps(selected_outfits, ensure_ascii=False)
         + "\nPERMANENT CHARACTER CANON: "
         + json.dumps(identity_block, ensure_ascii=False)
+        + "\nPERMANENT RECURRING CHILDREN (Aarav and Aarohi; include naturally in family scenes when appropriate): "
+        + json.dumps(child_identity_block, ensure_ascii=False)
+        + "\nCHILDREN SELECTED OUTFITS: " + json.dumps(child_outfits, ensure_ascii=False)
+        + "\nCHILDREN REFERENCE IMAGE PROMPTS: " + json.dumps(child_reference_prompts, ensure_ascii=False)
+        + "\nStory elapsed years at episode start: " + str(elapsed_years)
+        + ". Aarav starts at age 10 and Aarohi at age 6. Increase both ages only when actual in-story time passes; never age them one year per episode. Preserve child-safe, age-appropriate appearances."
         + "\nREFERENCE IMAGE PROMPTS: "
         + json.dumps(reference_prompts, ensure_ascii=False)
         + "\nOUTPUT JSON SCHEMA: "
