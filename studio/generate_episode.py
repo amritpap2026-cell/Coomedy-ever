@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 PROFILE_PATH = ROOT / "characters" / "character_profiles.json"
 
 # Reusable visual system: same layout and brand treatment for every episode.
-THUMBNAIL_TEMPLATE = """THE INNER EDGE? No — this is the AI Comedy Studio series thumbnail.
+THUMBNAIL_TEMPLATE = """Reusable visual system for the Nepali AI Comedy Studio series.
 Canvas: 16:9 YouTube thumbnail, 1280x720, cinematic photorealistic Nepali comedy.
 Keep the recurring characters' exact approved faces, age, hair and episode wardrobe.
 Composition: two characters large in the foreground on the same Himalayan balcony,
@@ -187,7 +187,8 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
             {"speaker_id": "A", "text": "...", "start_seconds": 0, "end_seconds": 2}
         ],
         "audio": {"ambience": "...", "sfx": ["..."], "music_mood": "..."},
-        "thumbnail_prompt": "Describe only the episode-specific funny moment and a short Nepali headline; do not redesign the fixed template.",
+        "thumbnail_headline_ne": "छोटो, मौलिक, हास्यास्पद नेपाली headline",
+        "thumbnail_prompt": "Describe only the episode-specific funny moment; do not redesign the fixed template.",
         "youtube_title": "...",
         "description": "...",
         "tags": ["..."],
