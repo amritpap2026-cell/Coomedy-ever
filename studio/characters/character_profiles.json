@@ -7,7 +7,8 @@
     "Never change a character's face shape, apparent age, skin tone, hairstyle, distinguishing features, signature outfit or voice profile unless the user explicitly edits that character.",
     "For a two-person shot, show exactly the selected two characters and preserve their relative height and appearance.",
     "Do not blend faces, swap clothing, duplicate a character, or invent a third speaking character.",
-    "Use the same reference-image prompt for all shots featuring that character; vary only pose, expression, camera framing and action."
+    "Use the same reference-image prompt for all shots featuring that character; vary only pose, expression, camera framing and action.",
+    "Do not force the same outfit across different episodes; wardrobe changes between episodes are required, while remaining consistent within each episode."
   ],
   "pairings": {
     "mother_son": {
@@ -200,5 +201,13 @@
         }
       }
     }
+  },
+  "outfit_policy": {
+    "rule": "Wardrobe MUST change between separate episodes/videos. The listed wardrobe is a character style anchor, not a permanently locked outfit.",
+    "within_episode": "For one episode, select one outfit per character and keep it exactly consistent across every shot, camera angle, pose, and generated frame in that episode.",
+    "between_episodes": "Choose a visibly different outfit for each new episode, suitable for the story, location, weather, season, time of day, and occasion.",
+    "identity_lock": "Changing clothes must never change the character's face, age, skin tone, body proportions, hairstyle, or distinctive identifying features.",
+    "turnaround": "Generate all five angle views using the outfit selected for that specific episode; never mix outfits between angles.",
+    "variety": "Rotate colors, garments, layers, and accessories naturally while preserving the character's recognizable personal style."
   }
 }
