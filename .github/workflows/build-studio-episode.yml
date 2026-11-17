@@ -19,7 +19,7 @@ on:
         required: false
         type: string
 permissions:
-  contents: read
+  contents: write
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -35,6 +35,13 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
         run: python studio/generate_episode.py --format "${{ inputs.format }}" --pairing "${{ inputs.pairing }}" --topic "${{ inputs.topic }}"
+      - name: Save series continuity for the next episode
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studio/series_state.json
+          git diff --cached --quiet || git commit -m "Advance comedy series continuity [skip ci]"
+          git push
       - uses: actions/upload-artifact@v4
         with:
           name: nepali-comedy-${{ inputs.format }}-${{ github.run_id }}
