@@ -8,7 +8,11 @@
     "For a two-person shot, show exactly the selected two characters and preserve their relative height and appearance.",
     "Do not blend faces, swap clothing, duplicate a character, or invent a third speaking character.",
     "Use the same reference-image prompt for all shots featuring that character; vary only pose, expression, camera framing and action.",
-    "Do not force the same outfit across different episodes; wardrobe changes between episodes are required, while remaining consistent within each episode."
+    "Do not force the same outfit across different episodes; wardrobe changes between episodes are required, while remaining consistent within each episode.",
+    "Aarav (starting age 10) and Aarohi (starting age 6) are permanent recurring children in the same shared story world.",
+    "They age naturally together only when the story timeline explicitly advances by months or years; never age them one year per episode.",
+    "When the story advances by a year, increase both children's ages by the same elapsed time while preserving their identity and age-appropriate appearance.",
+    "Never reset their ages between episodes. Keep them children unless enough in-story years have genuinely passed."
   ],
   "pairings": {
     "mother_son": {
@@ -579,5 +583,113 @@
     "between_episodes": "Outfits may change between episodes. Do not change the character's face, age, skin tone, body proportions, hairstyle, voice or distinctive identity features.",
     "reference_generation": "Generate outfit reference images separately for each outfit while keeping the same character identity. Never combine multiple outfits in one final video shot.",
     "continuity": "Store the selected outfit_id in episode metadata and pass the same outfit description to all image and video prompts for that character."
+  },
+  "supporting_characters": {
+    "son": {
+      "character_id": "child_son_aarav_01",
+      "name": "आरव",
+      "role": "घरको छोरा",
+      "apparent_age": "१० वर्ष",
+      "starting_age_years": 10,
+      "face": "A lively Nepali boy with a softly rounded oval face, bright dark-brown eyes, a small dimple on the right cheek and a cheerful expressive smile.",
+      "skin": "Medium warm-brown Nepali skin tone with natural childlike skin texture.",
+      "hair": "Short thick black hair, softly side-swept fringe, neat natural style.",
+      "distinctive_details": "A tiny faint freckle below the left eye.",
+      "personality": "Curious, clever, mischievous and full of questions; often catches adults contradicting themselves.",
+      "mannerisms": "Leans forward when curious, raises both eyebrows, grins before a cheeky question.",
+      "voice_ne": "Natural 10-year-old Nepali boy voice, bright medium-high register, clear age-appropriate Kathmandu Nepali; never adult-sounding.",
+      "reference_image_prompt": "Photorealistic consistent full-body character reference of Aarav, a 10-year-old Nepali boy, softly rounded oval face, bright dark-brown eyes, small right-cheek dimple, medium warm-brown skin, short thick black hair with softly side-swept fringe, tiny faint freckle below left eye. Age-appropriate child proportions, natural modest styling, warm friendly expression, soft Himalayan morning light, realistic skin texture, cinematic photography. Preserve exact identity and child age at the story's starting point.",
+      "negative_prompt": "adult body, teenager, facial hair, different child, changed face, exaggerated cartoon proportions, anime, plastic skin, extra fingers, text, watermark",
+      "outfit_options": [
+        {
+          "outfit_id": "child_son_aarav_01_outfit_01",
+          "name": "Everyday casual",
+          "description": "Sky-blue polo shirt, navy shorts and comfortable sneakers."
+        },
+        {
+          "outfit_id": "child_son_aarav_01_outfit_02",
+          "name": "Traditional Nepali",
+          "description": "Cream daura-suruwal inspired child outfit with a small Dhaka topi for suitable occasions."
+        },
+        {
+          "outfit_id": "child_son_aarav_01_outfit_03",
+          "name": "Modern casual",
+          "description": "Forest-green graphic-free sweatshirt, beige joggers and sneakers."
+        },
+        {
+          "outfit_id": "child_son_aarav_01_outfit_04",
+          "name": "Winter wear",
+          "description": "Navy padded jacket over a mustard sweater, warm trousers and sneakers."
+        },
+        {
+          "outfit_id": "child_son_aarav_01_outfit_05",
+          "name": "Summer wear",
+          "description": "Light-yellow cotton T-shirt, olive shorts and sandals."
+        },
+        {
+          "outfit_id": "child_son_aarav_01_outfit_06",
+          "name": "Home wear",
+          "description": "Soft grey cotton T-shirt and blue comfortable track pants."
+        },
+        {
+          "outfit_id": "child_son_aarav_01_outfit_07",
+          "name": "Festival wear",
+          "description": "Maroon child-sized kurta with cream trousers and simple traditional shoes."
+        }
+      ]
+    },
+    "daughter": {
+      "character_id": "child_daughter_aarohi_01",
+      "name": "आरोही",
+      "role": "घरकी छोरी",
+      "apparent_age": "६ वर्ष",
+      "starting_age_years": 6,
+      "face": "A sweet Nepali girl with a small heart-shaped face, large dark-brown eyes, soft round cheeks and a bright dimpled smile.",
+      "skin": "Medium-light warm Nepali skin tone with natural childlike skin texture.",
+      "hair": "Straight black hair in two neat shoulder-length braids tied with small teal ribbons, soft fringe.",
+      "distinctive_details": "A tiny beauty mark near the right temple and small silver stud earrings.",
+      "personality": "Playful, observant, imaginative and unexpectedly sharp; asks innocent questions that expose adult nonsense.",
+      "mannerisms": "Tilts her head while thinking, lightly swings her feet when seated, claps softly when excited.",
+      "voice_ne": "Natural 6-year-old Nepali girl voice, gentle bright high register, clear age-appropriate Kathmandu Nepali; never adult-sounding.",
+      "reference_image_prompt": "Photorealistic consistent full-body character reference of Aarohi, a 6-year-old Nepali girl, small heart-shaped face, large dark-brown eyes, soft round cheeks, bright dimpled smile, medium-light warm Nepali skin, straight black hair in two neat shoulder-length braids tied with small teal ribbons, soft fringe, tiny beauty mark near right temple, small silver stud earrings. Clearly age-appropriate child proportions and modest clothing, soft Himalayan morning light, realistic skin texture, cinematic photography. Preserve exact identity and child age at the story's starting point.",
+      "negative_prompt": "adult body, teenager, mature makeup, sexualized clothing or pose, different child, changed face, anime, cartoon, plastic skin, extra fingers, text, watermark",
+      "outfit_options": [
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_01",
+          "name": "Everyday casual",
+          "description": "Peach cotton top, denim pinafore dress over leggings and comfortable shoes."
+        },
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_02",
+          "name": "Traditional Nepali",
+          "description": "Child-sized red kurta-suruwal with a light cream dupatta for suitable family occasions."
+        },
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_03",
+          "name": "Modern casual",
+          "description": "Lavender sweatshirt, navy leggings and simple sneakers."
+        },
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_04",
+          "name": "Winter wear",
+          "description": "Soft rose padded jacket, cream sweater, warm leggings and boots."
+        },
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_05",
+          "name": "Summer wear",
+          "description": "Mint-green cotton frock with modest shorts underneath and sandals."
+        },
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_06",
+          "name": "Home wear",
+          "description": "Sky-blue cotton top and soft purple pajama pants."
+        },
+        {
+          "outfit_id": "child_daughter_aarohi_01_outfit_07",
+          "name": "Festival wear",
+          "description": "Bright marigold-yellow kurta set with subtle traditional embroidery and comfortable flats."
+        }
+      ]
+    }
   }
 }
