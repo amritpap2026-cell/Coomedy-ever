@@ -284,6 +284,25 @@ def main():
     calendar = load_nepali_calendar(args.date)
     state_path = ROOT / "series_state.json"
     series_state = json.loads(state_path.read_text(encoding="utf-8"))
+
+    # Resolve episode canon and outfits in main for both metadata and prompt generation.
+    next_episode_number = int(series_state.get("episode_number", 0)) + 1
+    elapsed_years = float(series_state.get("story_elapsed_years", 0))
+    selected = profiles["pairings"][args.pairing]["characters"]
+    supporting = profiles.get("supporting_characters", {})
+    selected_outfits = {}
+    for speaker_id in ("A", "B"):
+        options = selected[speaker_id].get("outfit_options", [])
+        if not options:
+            sys.exit(f"No outfit_options configured for {args.pairing}/{speaker_id}.")
+        selected_outfits[speaker_id] = options[(next_episode_number - 1) % len(options)]
+    child_outfits = {}
+    for child_id, child in supporting.items():
+        options = child.get("outfit_options", [])
+        if not options:
+            sys.exit(f"No outfit_options configured for supporting character {child_id}.")
+        child_outfits[child_id] = options[(next_episode_number - 1) % len(options)]
+
     prompt = build_prompt(args.format, args.pairing, args.topic, profiles, calendar, series_state)
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -389,6 +408,7 @@ def main():
         speaker = selected[line["speaker_id"]]["name"]
         lines.append(f"**{speaker}:** {line['text']}")
     (output / "episode.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (output / "thumbnail_prompt.txt").write_text(data["thumbnail_prompt"].strip() + "\n", encoding="utf-8")
     print(f"Generated episode package: {output}")
 
 
