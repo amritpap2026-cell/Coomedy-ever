@@ -200,7 +200,8 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
         "creative_seed": creative_seed,
     }
     return (
-        "NEPALI LANGUAGE AND VOICE LOCK: " + json.dumps(profiles.get("nepali_language_voice_policy", {}), ensure_ascii=False) + "\\n"\n        "नेपाली भाषामा मौलिक, अत्यन्तै रमाइलो र स्वाभाविक comedy लेख्नुहोस्। "
+        "NEPALI LANGUAGE AND VOICE LOCK: " + json.dumps(profiles.get("nepali_language_voice_policy", {}), ensure_ascii=False) + "\\n"
+        "नेपाली भाषामा मौलिक, अत्यन्तै रमाइलो र स्वाभाविक comedy लेख्नुहोस्। "
         "स्थान: हिमाल देखिने नेपाली घरको बाल्कोनी, बिहान, टेबलमा कफी। "
         f"विषय: {topic or 'दैनिक जीवनको रमाइलो घटना'}। ढाँचा {fmt}, अवधि {duration}, "
         f"संवाद लक्ष्य {words} शब्द, aspect {ratio}। "
