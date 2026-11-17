@@ -3,6 +3,7 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import requests
@@ -41,7 +42,78 @@ def load_profiles():
     return profiles
 
 
-def build_prompt(fmt, pairing_id, topic, profiles):
+
+CALENDAR_BASE_URL = "https://trisambat.com/api/v1"
+
+
+def load_nepali_calendar(date_override=""):
+    """Load BS date and festival events; continue safely if the calendar API is unavailable."""
+    try:
+        if date_override:
+            parsed = datetime.strptime(date_override, "%Y-%m-%d").date()
+            url = f"{CALENDAR_BASE_URL}/ad/{parsed.year}/{parsed.month:02d}.json"
+            response = requests.get(url, timeout=20)
+            response.raise_for_status()
+            payload = response.json()
+            days = payload.get("days", []) if isinstance(payload, dict) else payload
+            day = next((item for item in days if item.get("ad") == parsed.isoformat()), None)
+            if not day:
+                raise ValueError("No calendar record for " + parsed.isoformat())
+        else:
+            response = requests.get(f"{CALENDAR_BASE_URL}/today.json", timeout=20)
+            response.raise_for_status()
+            day = response.json()
+
+        bs_year = day.get("bs", {}).get("year")
+        if not bs_year:
+            raise ValueError("Calendar response has no BS year.")
+        holiday_response = requests.get(f"{CALENDAR_BASE_URL}/holidays/{bs_year}.json", timeout=20)
+        holiday_response.raise_for_status()
+        holiday_payload = holiday_response.json()
+        entries = holiday_payload.get("days", holiday_payload.get("holidays", [])) if isinstance(holiday_payload, dict) else holiday_payload
+        ad_date = day.get("ad") or date_override
+        events = list(day.get("events", []))
+        if isinstance(entries, list):
+            for item in entries:
+                if isinstance(item, dict) and (item.get("ad") or item.get("date") or item.get("gregorian")) == ad_date:
+                    if item not in events:
+                        events.append(item)
+        return {
+            "available": True,
+            "ad_date": ad_date,
+            "bs_date": day.get("text", {}).get("bs", {}).get("ne", ""),
+            "weekday": day.get("weekday"),
+            "events": events,
+            "is_holiday": day.get("holiday", False),
+            "source": "Trisambat Nepali Calendar API (beta)",
+        }
+    except Exception as exc:
+        print("WARNING: Nepali calendar unavailable; using a regular-day script. " + str(exc), file=sys.stderr)
+        return {
+            "available": False,
+            "ad_date": date_override or datetime.now(ZoneInfo("Asia/Kathmandu")).date().isoformat(),
+            "bs_date": "",
+            "weekday": None,
+            "events": [],
+            "is_holiday": False,
+            "source": "unavailable",
+            "warning": str(exc),
+        }
+
+
+def calendar_event_names(calendar):
+    result = []
+    for event in calendar.get("events", []):
+        if isinstance(event, str):
+            result.append(event)
+        elif isinstance(event, dict):
+            name = event.get("nameNe") or event.get("name_ne") or event.get("name") or event.get("title") or event.get("festival")
+            if name:
+                result.append(str(name))
+    return list(dict.fromkeys(result))
+
+
+def build_prompt(fmt, pairing_id, topic, profiles, calendar):
     pairing = profiles["pairings"][pairing_id]
     characters = pairing["characters"]
     duration, ratio, words = (
@@ -106,6 +178,13 @@ def build_prompt(fmt, pairing_id, topic, profiles):
         }
         for speaker_id in ("A", "B")
     }
+    calendar_context = {
+        "ad_date": calendar.get("ad_date"),
+        "bs_date_ne": calendar.get("bs_date"),
+        "special_events_today": calendar_event_names(calendar),
+        "public_holiday": calendar.get("is_holiday", False),
+        "calendar_available": calendar.get("available", False),
+    }
     return (
         "नेपाली भाषामा मौलिक, अत्यन्तै रमाइलो र स्वाभाविक comedy लेख्नुहोस्। "
         "स्थान: हिमाल देखिने नेपाली घरको बाल्कोनी, बिहान, टेबलमा कफी। "
@@ -118,7 +197,8 @@ def build_prompt(fmt, pairing_id, topic, profiles):
         "र उही दृश्य पहिचान कायम राख्ने निर्देशन समावेश गर्नुहोस्। एउटै पात्रलाई फरक अनुहार "
         "वा फरक कपडामा नदेखाउनुहोस्। Speaker A/B कहिल्यै नसाट्नुहोस्। "
         "प्रत्येक संवादमा speaker_id, emotion, action र shot_id अनिवार्य राख्नुहोस्। "
-        "अपमानजनक, घृणायुक्त वा लक्षित समूहलाई होच्याउने मजाक नगर्नुहोस्। JSON मात्र फर्काउनुहोस्.\n"
+        "आजको नेपाली पात्रोअनुसार विशेष पर्व वा दिवस छ भने त्यसको संस्कृति, खानपान, चलन र पारिवारिक परिवेशलाई कथामा स्वाभाविक रूपमा समेट्नुहोस्। पर्वको नाम मात्र उल्लेख नगर्नुहोस्; त्यसैअनुसार मौलिक punchline बनाउनुहोस्। आज विशेष पर्व छैन भने जबर्जस्ती पर्व नथप्नुहोस्। पात्रोमा नभएका मिति वा सांस्कृतिक तथ्य नबनाउनुहोस्। अपमानजनक वा घृणायुक्त मजाक नगर्नुहोस्। JSON मात्र फर्काउनुहोस्.\n"
+        "NEPALI CALENDAR CONTEXT: " + json.dumps(calendar_context, ensure_ascii=False) + "\n"
         "PERMANENT CHARACTER CANON: "
         + json.dumps(identity_block, ensure_ascii=False)
         + "\nREFERENCE IMAGE PROMPTS: "
@@ -133,6 +213,7 @@ def main():
     parser.add_argument("--format", choices=["short", "long"], default="short")
     parser.add_argument("--pairing", choices=PAIRINGS, default="mother_son")
     parser.add_argument("--topic", default="")
+    parser.add_argument("--date", default="", help="Optional AD date YYYY-MM-DD; defaults to today in Nepal.")
     args = parser.parse_args()
 
     profiles = load_profiles()
@@ -141,7 +222,8 @@ def main():
         sys.exit("Missing GEMINI_API_KEY Actions secret.")
     model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-    prompt = build_prompt(args.format, args.pairing, args.topic, profiles)
+    calendar = load_nepali_calendar(args.date)
+    prompt = build_prompt(args.format, args.pairing, args.topic, profiles, calendar)
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
@@ -176,6 +258,7 @@ def main():
     data["studio_character_profiles"] = {
         speaker_id: selected[speaker_id] for speaker_id in ("A", "B")
     }
+    data["nepali_calendar"] = calendar
     data.update({
         "format": args.format,
         "aspect_ratio": "9:16" if args.format == "short" else "16:9",
@@ -190,7 +273,11 @@ def main():
     (output / "episode.json").write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    lines = [f"# {data['title']}", "", "## स्थायी पात्र"]
+    lines = [f"# {data['title']}", "", "## नेपाली पात्रो"]
+    lines.append(f"- मिति: {calendar.get('bs_date') or calendar.get('ad_date')}")
+    names = calendar_event_names(calendar)
+    lines.append("- विशेष दिन/पर्व: " + (", ".join(names) if names else "आज पात्रोमा विशेष पर्व भेटिएन"))
+    lines.extend(["", "## स्थायी पात्र"])
     for speaker_id in ("A", "B"):
         character = selected[speaker_id]
         lines.append(
