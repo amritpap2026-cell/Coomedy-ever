@@ -70,7 +70,20 @@
               "name": "Festival / special occasion",
               "description": "Elegant deep-maroon festive sari with a teal blouse and understated gold jewelry."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Mature Nepali woman voice, warm mid register, clear Kathmandu-valley Nepali, measured pace, playful dry humour; never shrill.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         },
         "B": {
           "character_id": "chhoro_rohan_01",
@@ -123,7 +136,20 @@
               "name": "Festival / special occasion",
               "description": "Deep-blue Nehru-style waistcoat over a white kurta and dark trousers."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Young Nepali man voice, medium pitch, conversational Kathmandu Nepali, lively pace, clear consonants, slightly cheeky.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         }
       }
     },
@@ -182,7 +208,20 @@
               "name": "Festival / special occasion",
               "description": "Elegant cream daura-suruwal with a patterned Dhaka topi and dark waistcoat."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Mature Nepali man voice, warm low-mid register, steady pace, clear standard Nepali with gentle eastern-hill lilt.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         },
         "B": {
           "character_id": "chhori_isha_01",
@@ -235,7 +274,20 @@
               "name": "Festival / special occasion",
               "description": "Elegant maroon kurta set with subtle embroidery and matching dupatta."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Young Nepali woman voice, bright medium register, natural Kathmandu Nepali, crisp diction, quick but not rushed.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         }
       }
     },
@@ -294,7 +346,20 @@
               "name": "Festival / special occasion",
               "description": "Deep-maroon waistcoat over a cream kurta and dark trousers."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Nepali man voice in early 30s, medium-low register, relaxed Kathmandu accent, confident measured delivery with comic pauses.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         },
         "B": {
           "character_id": "shreemati_mina_01",
@@ -347,7 +412,20 @@
               "name": "Festival / special occasion",
               "description": "Elegant navy-blue kurta set with subtle gold detailing and matching dupatta."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Nepali woman voice in early 30s, warm medium register, fluent Kathmandu Nepali, composed pace, dry comic timing.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         }
       }
     },
@@ -406,7 +484,20 @@
               "name": "Festival / special occasion",
               "description": "Black Nehru waistcoat over a cream kurta and dark trousers."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Young Nepali man voice, medium register, casual Kathmandu Nepali, energetic and slightly boastful.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         },
         "B": {
           "character_id": "bahini_prakriti_01",
@@ -459,7 +550,20 @@
               "name": "Festival / special occasion",
               "description": "Elegant plum kurta set with subtle embroidery and matching dupatta."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Young Nepali woman voice, medium-high but natural register, clear Kathmandu Nepali, lively pace and crisp punchlines.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         }
       }
     },
@@ -518,7 +622,20 @@
               "name": "Festival / special occasion",
               "description": "Deep-blue waistcoat over a cream kurta and dark trousers."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Nepali man voice in late 20s, medium pitch, friendly Kathmandu Nepali, quick enthusiastic delivery.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         },
         "B": {
           "character_id": "sathi_ujjwal_01",
@@ -571,7 +688,20 @@
               "name": "Festival / special occasion",
               "description": "Black Nehru waistcoat over a cream kurta and dark trousers."
             }
-          ]
+          ],
+          "language_profile": {
+            "language": "Nepali",
+            "script": "Devanagari",
+            "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+            "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+            "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+            "dialogue_register": "Character-specific natural Nepali; keep the character's personality and relationship register."
+          },
+          "voice_lock": {
+            "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+            "voice_profile": "Nepali man voice in late 20s, low-mid register, measured Kathmandu Nepali, dry humour and clean diction.",
+            "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+          }
         }
       }
     }
@@ -636,7 +766,20 @@
           "name": "Festival wear",
           "description": "Maroon child-sized kurta with cream trousers and simple traditional shoes."
         }
-      ]
+      ],
+      "language_profile": {
+        "language": "Nepali",
+        "script": "Devanagari",
+        "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+        "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+        "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+        "dialogue_register": "Simple, age-appropriate natural Nepali."
+      },
+      "voice_lock": {
+        "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+        "voice_profile": "Natural 10-year-old Nepali boy voice, bright medium-high register, clear age-appropriate Kathmandu Nepali; never adult-sounding.",
+        "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+      }
     },
     "daughter": {
       "character_id": "child_daughter_aarohi_01",
@@ -689,7 +832,33 @@
           "name": "Festival wear",
           "description": "Bright marigold-yellow kurta set with subtle traditional embroidery and comfortable flats."
         }
-      ]
+      ],
+      "language_profile": {
+        "language": "Nepali",
+        "script": "Devanagari",
+        "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+        "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+        "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+        "dialogue_register": "Simple, age-appropriate natural Nepali."
+      },
+      "voice_lock": {
+        "identity_rule": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+        "voice_profile": "Natural 6-year-old Nepali girl voice, gentle bright high register, clear age-appropriate Kathmandu Nepali; never adult-sounding.",
+        "tts_requirement": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated."
+      }
     }
+  },
+  "nepali_language_voice_policy": {
+    "language": "Nepali",
+    "language_script": "देवनागरी",
+    "dialect": "प्राकृतिक, आधुनिक, सर्वसाधारणले बुझ्ने नेपाली; काठमाडौं/मध्यपहाडी नेपालीको सहज बोली, अनावश्यक अंग्रेजी मिसावट बिना",
+    "fluency": "Native-level fluent, idiomatic conversational Nepali. Correct grammar, natural word order, culturally authentic expressions, believable interruptions and reactions.",
+    "voice_lock": "Every character has a permanent, unique voice identity. Keep the same perceived age, gender presentation, pitch range, timbre, accent, speaking rhythm, pronunciation and vocal texture in every episode. Never swap voices between characters.",
+    "pronunciation": "Clear Nepali vowels and consonants, natural syllable timing and sentence intonation; no Hindi accent, robotic cadence, synthetic mispronunciation or random accent drift.",
+    "dialogue": "Write dialogue in Devanagari. Use natural family/friend registers, age-appropriate vocabulary for children, distinct character personalities, and comedic timing. Avoid translating English jokes literally.",
+    "tts": "Use the same configured Nepali-capable TTS provider and exact saved voice ID per character across episodes. Store provider/model/voice IDs in environment configuration or voice registry; never silently substitute a different voice model. If unavailable, fail clearly or mark voice pending rather than claiming audio generated.",
+    "audio": "Generate each speaker's dialogue as separate audio segments with speaker ID, then align lip-sync to that speaker only. Keep ambience and SFX on separate tracks.",
+    "child_safety": "Child voices and dialogue must remain age-appropriate and clearly childlike; never use adult voice profiles for children.",
+    "model_policy": "Pin an explicit TTS provider and model version in configuration. Do not assume a model or voice ID exists until tested and configured."
   }
 }
