@@ -24,12 +24,49 @@
           "skin": "Medium warm-brown Nepali skin tone with natural texture.",
           "hair": "Black hair with a few silver strands, neatly tied in a low bun, a clean center part.",
           "distinctive_details": "Small red tika, tiny gold nose stud, gentle expressive eyebrows.",
-          "wardrobe": "Fixed signature outfit: deep teal kurta, muted maroon shawl, simple gold stud earrings; no changing patterns or colors.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: deep teal kurta, muted maroon shawl, simple gold stud earrings; no changing patterns or colors. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Quick-witted, affectionate, observant; wins arguments with calm one-line punchlines.",
           "mannerisms": "Raises one eyebrow before a punchline, gives a knowing half-smile, stirs coffee slowly.",
           "voice_ne": "Mature Nepali woman voice, warm mid register, clear Kathmandu-valley Nepali, measured pace, playful dry humour; never shrill.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Sushila, a Nepali mother in her early 50s, warm oval face, medium warm-brown skin, kind dark-brown eyes, small beauty mark near left cheek, black hair with a few silver strands in a neat low bun with center part, small red tika, tiny gold nose stud, deep teal kurta and muted maroon shawl. Calm witty expression. Chest-up, facing camera, soft natural Himalayan morning light, realistic skin texture, cinematic portrait, neutral uncluttered balcony background. Preserve this exact identity in all future images.",
-          "negative_prompt": "different person, younger face, changed hairstyle, loose hair, changed outfit, heavy makeup, exaggerated wrinkles, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark"
+          "negative_prompt": "different person, younger face, changed hairstyle, loose hair, changed outfit, heavy makeup, exaggerated wrinkles, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "ama_sushila_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Deep teal kurta with muted maroon shawl; dark maroon salwar; simple gold studs."
+            },
+            {
+              "outfit_id": "ama_sushila_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Wine-red sari with a teal blouse; modest gold earrings; neatly draped pallu."
+            },
+            {
+              "outfit_id": "ama_sushila_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Mustard-yellow kurta with cream trousers and a light beige dupatta."
+            },
+            {
+              "outfit_id": "ama_sushila_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Plum wool cardigan over a teal kurta, warm shawl, dark trousers."
+            },
+            {
+              "outfit_id": "ama_sushila_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light sky-blue cotton kurta with white trousers and a pale floral dupatta."
+            },
+            {
+              "outfit_id": "ama_sushila_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Soft lavender house kurta with comfortable charcoal cotton pants."
+            },
+            {
+              "outfit_id": "ama_sushila_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Elegant deep-maroon festive sari with a teal blouse and understated gold jewelry."
+            }
+          ]
         },
         "B": {
           "character_id": "chhoro_rohan_01",
@@ -40,12 +77,49 @@
           "skin": "Medium tan Nepali skin tone.",
           "hair": "Thick black hair, short sides and slightly tousled top.",
           "distinctive_details": "Very light moustache and a tiny faint scar through the outer edge of the right eyebrow.",
-          "wardrobe": "Fixed signature outfit: mustard-yellow casual hoodie over a plain charcoal T-shirt; no logos.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: mustard-yellow casual hoodie over a plain charcoal T-shirt; no logos. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Confident, tech-curious, easily caught in his own overthinking.",
           "mannerisms": "Leans back when confident, gestures with his coffee cup, pauses and blinks when caught out.",
           "voice_ne": "Young Nepali man voice, medium pitch, conversational Kathmandu Nepali, lively pace, clear consonants, slightly cheeky.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Rohan, a Nepali man in his mid 20s, slightly long youthful face, defined jaw, expressive dark-brown eyes, faint right-cheek dimple, medium tan skin, thick black hair with short sides and slightly tousled top, very light moustache, tiny faint scar at outer edge of right eyebrow. Mustard-yellow hoodie over plain charcoal T-shirt, no logos. Confident friendly expression. Chest-up, facing camera, soft natural Himalayan morning light, realistic skin texture, cinematic portrait, neutral uncluttered balcony background. Preserve this exact identity in all future images.",
-          "negative_prompt": "different person, beard, long hair, changed haircut, changed hoodie color, logos, sunglasses, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark"
+          "negative_prompt": "different person, beard, long hair, changed haircut, changed hoodie color, logos, sunglasses, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Mustard-yellow hoodie over charcoal T-shirt, black jeans and white sneakers."
+            },
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Olive-green casual kurta with dark denim and simple sneakers."
+            },
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Rust-orange overshirt over a cream T-shirt, dark jeans and casual shoes."
+            },
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Navy padded jacket over a grey hoodie, dark trousers and sneakers."
+            },
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light-blue cotton T-shirt, beige chinos and white sneakers."
+            },
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Charcoal lounge T-shirt with comfortable navy joggers."
+            },
+            {
+              "outfit_id": "chhoro_rohan_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Deep-blue Nehru-style waistcoat over a white kurta and dark trousers."
+            }
+          ]
         }
       }
     },
@@ -62,12 +136,49 @@
           "skin": "Medium brown Nepali skin tone.",
           "hair": "Short salt-and-pepper hair, neatly combed to the side.",
           "distinctive_details": "Neatly trimmed salt-and-pepper moustache and thin rectangular reading glasses.",
-          "wardrobe": "Fixed signature outfit: light cream daura-suruwal style shirt with a slate-grey sleeveless waistcoat.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: light cream daura-suruwal style shirt with a slate-grey sleeveless waistcoat. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Patient, traditional in habits, quietly clever and fond of playful exaggeration.",
           "mannerisms": "Adjusts glasses before explaining, cups coffee with both hands, smiles at his own logic.",
           "voice_ne": "Mature Nepali man voice, warm low-mid register, steady pace, clear standard Nepali with gentle eastern-hill lilt.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Hariprasad, a Nepali father in his late 50s, broad friendly face, softly square jaw, deep-set brown eyes, medium brown skin, subtle smile lines, short salt-and-pepper hair neatly side-combed, neatly trimmed salt-and-pepper moustache, thin rectangular reading glasses. Light cream daura-suruwal style shirt and slate-grey sleeveless waistcoat. Patient amused expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, thick beard, no glasses, modern suit, changed waistcoat, exaggerated age, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, thick beard, no glasses, modern suit, changed waistcoat, exaggerated age, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "buba_hari_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Light cream daura-suruwal style shirt with slate-grey waistcoat and dark trousers."
+            },
+            {
+              "outfit_id": "buba_hari_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "White daura-suruwal with a black Dhaka topi and understated traditional details."
+            },
+            {
+              "outfit_id": "buba_hari_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Soft olive sweater over a cream shirt with brown trousers."
+            },
+            {
+              "outfit_id": "buba_hari_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Charcoal wool waistcoat over a warm cream kurta and dark wool trousers."
+            },
+            {
+              "outfit_id": "buba_hari_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light sky-blue cotton shirt with beige trousers and simple sandals."
+            },
+            {
+              "outfit_id": "buba_hari_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Comfortable pale-grey kurta pajama with a light knitted vest."
+            },
+            {
+              "outfit_id": "buba_hari_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Elegant cream daura-suruwal with a patterned Dhaka topi and dark waistcoat."
+            }
+          ]
         },
         "B": {
           "character_id": "chhori_isha_01",
@@ -78,12 +189,49 @@
           "skin": "Medium-light warm Nepali skin tone.",
           "hair": "Long black hair in a neat low ponytail, a few natural loose strands near temples.",
           "distinctive_details": "Small silver stud earrings and a tiny dimple on the left cheek.",
-          "wardrobe": "Fixed signature outfit: dusty-rose kurta with a simple navy-blue cardigan.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: dusty-rose kurta with a simple navy-blue cardigan. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Modern, sharp, curious and lovingly sarcastic; explains things with witty examples.",
           "mannerisms": "Tilts head when questioning, gives a quick side-eye, smiles before correcting her father.",
           "voice_ne": "Young Nepali woman voice, bright medium register, natural Kathmandu Nepali, crisp diction, quick but not rushed.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Isha, a Nepali woman in her early 20s, heart-shaped face, bright dark-brown eyes, softly arched eyebrows, medium-light warm Nepali skin, long black hair in a neat low ponytail with a few natural strands near temples, small silver stud earrings, tiny left-cheek dimple. Dusty-rose kurta and simple navy-blue cardigan. Confident warm smile. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, short hair, heavy makeup, changed clothing, western business suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, short hair, heavy makeup, changed clothing, western business suit, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "chhori_isha_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Dusty-rose kurta with navy-blue cardigan, dark trousers and simple flats."
+            },
+            {
+              "outfit_id": "chhori_isha_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Deep-indigo kurta with a light printed dupatta and slim trousers."
+            },
+            {
+              "outfit_id": "chhori_isha_01_outfit_03",
+              "name": "Modern casual",
+              "description": "White blouse with sage-green overshirt, dark jeans and sneakers."
+            },
+            {
+              "outfit_id": "chhori_isha_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Plum knit sweater over a black inner top, warm trousers and boots."
+            },
+            {
+              "outfit_id": "chhori_isha_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Mint-green cotton kurta with white trousers and a light scarf."
+            },
+            {
+              "outfit_id": "chhori_isha_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Soft peach lounge kurta with comfortable cream cotton pants."
+            },
+            {
+              "outfit_id": "chhori_isha_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Elegant maroon kurta set with subtle embroidery and matching dupatta."
+            }
+          ]
         }
       }
     },
@@ -100,12 +248,49 @@
           "skin": "Medium tan Nepali skin tone.",
           "hair": "Short black hair, tidy side fade with a slightly wavy top.",
           "distinctive_details": "Short neat stubble and a small crease in the left cheek when smiling.",
-          "wardrobe": "Fixed signature outfit: forest-green casual overshirt over a plain white T-shirt.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: forest-green casual overshirt over a plain white T-shirt. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Big planner, optimistic, loves sounding like an expert even when guessing.",
           "mannerisms": "Makes confident hand gestures, nods to himself, takes a sip after making a bold claim.",
           "voice_ne": "Nepali man voice in early 30s, medium-low register, relaxed Kathmandu accent, confident measured delivery with comic pauses.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Bikash, a Nepali man in his early 30s, rectangular face, friendly strong jawline, expressive brown eyes, medium tan skin, short black hair with tidy side fade and slightly wavy top, short neat stubble, small left-cheek crease when smiling. Forest-green casual overshirt over plain white T-shirt. Confident relaxed expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, long beard, long hair, changed overshirt, tie, suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, long beard, long hair, changed overshirt, tie, suit, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Forest-green casual overshirt over a plain white T-shirt, dark jeans."
+            },
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Charcoal kurta with dark blue jeans and simple casual shoes."
+            },
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Light-brown bomber jacket over a black T-shirt and dark trousers."
+            },
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Navy winter jacket over a grey sweater with dark jeans."
+            },
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Sky-blue linen shirt with beige chinos and casual shoes."
+            },
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Plain dark-grey T-shirt with comfortable black joggers."
+            },
+            {
+              "outfit_id": "shreeman_bikash_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Deep-maroon waistcoat over a cream kurta and dark trousers."
+            }
+          ]
         },
         "B": {
           "character_id": "shreemati_mina_01",
@@ -116,12 +301,49 @@
           "skin": "Medium warm-brown Nepali skin tone.",
           "hair": "Black shoulder-length hair, softly waved and tucked behind the right ear.",
           "distinctive_details": "Tiny maroon bindi and small gold hoop earrings.",
-          "wardrobe": "Fixed signature outfit: indigo-blue kurta with a muted mustard scarf.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: indigo-blue kurta with a muted mustard scarf. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Practical, perceptive, calm under pressure and usually two steps ahead.",
           "mannerisms": "Looks over her coffee cup before a punchline, folds arms lightly, gives a restrained smile.",
           "voice_ne": "Nepali woman voice in early 30s, warm medium register, fluent Kathmandu Nepali, composed pace, dry comic timing.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Mina, a Nepali woman in her early 30s, soft diamond-shaped face, alert dark-brown eyes, defined eyebrows, medium warm-brown skin, black shoulder-length softly waved hair tucked behind right ear, tiny maroon bindi, small gold hoop earrings. Indigo-blue kurta and muted mustard scarf. Calm knowing smile. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, long hair, changed hairstyle, changed scarf, heavy jewellery, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, long hair, changed hairstyle, changed scarf, heavy jewellery, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "shreemati_mina_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Indigo-blue kurta with muted mustard scarf and dark trousers."
+            },
+            {
+              "outfit_id": "shreemati_mina_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Deep-teal sari with a simple cream blouse and small gold hoops."
+            },
+            {
+              "outfit_id": "shreemati_mina_01_outfit_03",
+              "name": "Modern casual",
+              "description": "White blouse with a dusty-rose long cardigan and dark jeans."
+            },
+            {
+              "outfit_id": "shreemati_mina_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Warm plum sweater over a charcoal kurta with a soft wool scarf."
+            },
+            {
+              "outfit_id": "shreemati_mina_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light-yellow cotton kurta with white trousers and a pale scarf."
+            },
+            {
+              "outfit_id": "shreemati_mina_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Comfortable lavender house kurta with soft cotton pants."
+            },
+            {
+              "outfit_id": "shreemati_mina_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Elegant navy-blue kurta set with subtle gold detailing and matching dupatta."
+            }
+          ]
         }
       }
     },
@@ -138,12 +360,49 @@
           "skin": "Medium brown Nepali skin tone.",
           "hair": "Thick black hair, short and brushed upward at the front.",
           "distinctive_details": "A small mole below the right side of the lower lip; clean-shaven.",
-          "wardrobe": "Fixed signature outfit: rust-orange zip jacket over a dark navy T-shirt.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: rust-orange zip jacket over a dark navy T-shirt. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Thinks he is the family genius, competitive, playful and easy to outsmart.",
           "mannerisms": "Points one finger while explaining, sits forward when challenged, laughs awkwardly when caught.",
           "voice_ne": "Young Nepali man voice, medium register, casual Kathmandu Nepali, energetic and slightly boastful.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Sameer, a Nepali man in his late 20s, oval-rectangular face, raised expressive eyebrows, lively dark eyes, medium brown skin, thick short black hair brushed upward at front, small mole below right side of lower lip, clean-shaven. Rust-orange zip jacket over dark navy T-shirt. Playfully confident expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, moustache, beard, long hair, changed jacket, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, moustache, beard, long hair, changed jacket, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "daju_samir_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Rust-orange zip jacket over a dark navy T-shirt, black jeans."
+            },
+            {
+              "outfit_id": "daju_samir_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Deep-blue casual kurta over dark trousers and simple sneakers."
+            },
+            {
+              "outfit_id": "daju_samir_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Olive overshirt over a white T-shirt with charcoal jeans."
+            },
+            {
+              "outfit_id": "daju_samir_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Dark-brown puffer jacket over a cream sweater and warm trousers."
+            },
+            {
+              "outfit_id": "daju_samir_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light-grey cotton T-shirt with blue jeans and sneakers."
+            },
+            {
+              "outfit_id": "daju_samir_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Comfortable navy sweatshirt with charcoal joggers."
+            },
+            {
+              "outfit_id": "daju_samir_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Black Nehru waistcoat over a cream kurta and dark trousers."
+            }
+          ]
         },
         "B": {
           "character_id": "bahini_prakriti_01",
@@ -154,12 +413,49 @@
           "skin": "Medium warm Nepali skin tone.",
           "hair": "Long black hair in a single neat braid over the left shoulder.",
           "distinctive_details": "Small blue hair tie and tiny silver nose pin.",
-          "wardrobe": "Fixed signature outfit: lavender kurta with a white cotton scarf.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: lavender kurta with a white cotton scarf. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Playful, observant, sarcastic and excellent at exposing her brother's exaggerations.",
           "mannerisms": "Leans toward him with a teasing grin, taps the table lightly, glances at camera after a joke.",
           "voice_ne": "Young Nepali woman voice, medium-high but natural register, clear Kathmandu Nepali, lively pace and crisp punchlines.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Prakriti, a Nepali woman in her early 20s, round-oval face, lively dark-brown eyes, expressive eyebrows, medium warm Nepali skin, long black hair in a single neat braid over left shoulder, small blue hair tie, tiny silver nose pin. Lavender kurta and white cotton scarf. Mischievous friendly grin. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, loose hair, ponytail, changed braid, changed outfit, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, loose hair, ponytail, changed braid, changed outfit, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Lavender kurta with white cotton scarf and dark trousers."
+            },
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Teal-green kurta set with a light cream dupatta."
+            },
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_03",
+              "name": "Modern casual",
+              "description": "White shirt under a denim jacket with black jeans and sneakers."
+            },
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Soft rose sweater with a cream scarf and warm trousers."
+            },
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Peach cotton kurta with white trousers and a light scarf."
+            },
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Comfortable sky-blue house kurta with soft cotton pants."
+            },
+            {
+              "outfit_id": "bahini_prakriti_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Elegant plum kurta set with subtle embroidery and matching dupatta."
+            }
+          ]
         }
       }
     },
@@ -176,12 +472,49 @@
           "skin": "Medium tan Nepali skin tone.",
           "hair": "Short wavy black hair, naturally messy at the front.",
           "distinctive_details": "Thin black rectangular glasses and a faint moustache.",
-          "wardrobe": "Fixed signature outfit: cobalt-blue sweatshirt with no logo.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: cobalt-blue sweatshirt with no logo. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Overconfident dreamer, starts ambitious plans and improvises explanations.",
           "mannerisms": "Talks with both hands, leans toward the listener, smiles proudly at questionable ideas.",
           "voice_ne": "Nepali man voice in late 20s, medium pitch, friendly Kathmandu Nepali, quick enthusiastic delivery.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Nischal, a Nepali man in his late 20s, long oval face, bright observant eyes, medium tan skin, short naturally wavy black hair slightly messy at front, thin black rectangular glasses, faint moustache. Cobalt-blue plain sweatshirt with no logo. Enthusiastic friendly expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, rooftop balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, no glasses, thick beard, changed hairstyle, changed sweatshirt, logo, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, no glasses, thick beard, changed hairstyle, changed sweatshirt, logo, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "sathi_nischal_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Cobalt-blue plain sweatshirt, dark jeans and casual sneakers."
+            },
+            {
+              "outfit_id": "sathi_nischal_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Olive-green casual kurta with charcoal trousers."
+            },
+            {
+              "outfit_id": "sathi_nischal_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Checked navy overshirt over a white T-shirt and jeans."
+            },
+            {
+              "outfit_id": "sathi_nischal_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Dark-navy winter jacket over a grey hoodie and warm trousers."
+            },
+            {
+              "outfit_id": "sathi_nischal_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light-grey polo shirt with beige chinos and sneakers."
+            },
+            {
+              "outfit_id": "sathi_nischal_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Comfortable charcoal T-shirt with navy joggers."
+            },
+            {
+              "outfit_id": "sathi_nischal_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Deep-blue waistcoat over a cream kurta and dark trousers."
+            }
+          ]
         },
         "B": {
           "character_id": "sathi_ujjwal_01",
@@ -192,22 +525,59 @@
           "skin": "Medium-deep brown Nepali skin tone.",
           "hair": "Short neatly trimmed black hair with a clean natural hairline.",
           "distinctive_details": "Neatly shaped short beard and a tiny silver ear stud in the left ear.",
-          "wardrobe": "Fixed signature outfit: charcoal-grey checked casual shirt, sleeves folded once.",
+          "wardrobe": "Signature look anchor: Fixed signature outfit: charcoal-grey checked casual shirt, sleeves folded once. Seven selectable outfits are listed in outfit_options. Keep the selected outfit identical throughout one episode; vary between episodes.",
           "personality": "Grounded, analytical, quietly funny and skilled at puncturing nonsense with facts.",
           "mannerisms": "Listens without interrupting, raises one eyebrow, delivers punchlines in a calm tone.",
           "voice_ne": "Nepali man voice in late 20s, low-mid register, measured Kathmandu Nepali, dry humour and clean diction.",
           "reference_image_prompt": "Photorealistic consistent character portrait of Ujjwal, a Nepali man in his late 20s, broad oval face, steady dark-brown eyes, medium-deep brown skin, subtle left-cheek dimple, short neatly trimmed black hair with natural hairline, neatly shaped short beard, tiny silver stud in left ear. Charcoal-grey checked casual shirt with sleeves folded once. Calm amused expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, rooftop balcony background. Preserve exact identity.",
-          "negative_prompt": "different person, clean-shaven, long beard, long hair, changed shirt, suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+          "negative_prompt": "different person, clean-shaven, long beard, long hair, changed shirt, suit, cartoon, anime, plastic skin, extra fingers, text, watermark",
+          "outfit_options": [
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_01",
+              "name": "Everyday casual",
+              "description": "Charcoal-grey checked casual shirt with sleeves folded once, dark jeans."
+            },
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_02",
+              "name": "Traditional Nepali",
+              "description": "Deep-maroon kurta with black trousers and simple shoes."
+            },
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_03",
+              "name": "Modern casual",
+              "description": "Forest-green overshirt over a light-grey T-shirt and dark jeans."
+            },
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_04",
+              "name": "Winter wear",
+              "description": "Dark-grey wool jacket over a black sweater and warm trousers."
+            },
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_05",
+              "name": "Summer wear",
+              "description": "Light-cream linen shirt with olive chinos and casual shoes."
+            },
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_06",
+              "name": "Relaxed home wear",
+              "description": "Comfortable navy cotton T-shirt with charcoal joggers."
+            },
+            {
+              "outfit_id": "sathi_ujjwal_01_outfit_07",
+              "name": "Festival / special occasion",
+              "description": "Black Nehru waistcoat over a cream kurta and dark trousers."
+            }
+          ]
         }
       }
     }
   },
   "outfit_policy": {
-    "rule": "Wardrobe MUST change between separate episodes/videos. The listed wardrobe is a character style anchor, not a permanently locked outfit.",
-    "within_episode": "For one episode, select one outfit per character and keep it exactly consistent across every shot, camera angle, pose, and generated frame in that episode.",
-    "between_episodes": "Choose a visibly different outfit for each new episode, suitable for the story, location, weather, season, time of day, and occasion.",
-    "identity_lock": "Changing clothes must never change the character's face, age, skin tone, body proportions, hairstyle, or distinctive identifying features.",
-    "turnaround": "Generate all five angle views using the outfit selected for that specific episode; never mix outfits between angles.",
-    "variety": "Rotate colors, garments, layers, and accessories naturally while preserving the character's recognizable personal style."
+    "rule": "Each of the 10 permanent characters has exactly seven selectable outfit options in that character's outfit_options array.",
+    "selection": "Select exactly one outfit per character for each episode. Prefer rotating outfits between consecutive episodes; choose a context-appropriate outfit for season, weather, location and story.",
+    "within_episode": "The selected outfit must remain identical across every shot, angle, pose, reference frame and generated video segment within that episode.",
+    "between_episodes": "Outfits may change between episodes. Do not change the character's face, age, skin tone, body proportions, hairstyle, voice or distinctive identity features.",
+    "reference_generation": "Generate outfit reference images separately for each outfit while keeping the same character identity. Never combine multiple outfits in one final video shot.",
+    "continuity": "Store the selected outfit_id in episode metadata and pass the same outfit description to all image and video prompts for that character."
   }
 }
