@@ -21,7 +21,7 @@ Run the GitHub Actions workflow **Build Nepali Comedy Episode** manually. Choose
 - Short: 30–50 seconds, vertical 9:16
 - Long: 1–2 minutes, horizontal 16:9
 
-The artifact currently contains the episode JSON and dialogue Markdown. It does not yet contain generated character image files or a rendered MP4.
+The artifact contains the episode JSON, dialogue Markdown and a pair-specific `thumbnail_prompt.txt`. The thumbnail prompt uses the selected two characters only, their approved identities and episode outfits, a consistent AI Mountain Comedy Studio brand layout, a Nepali headline and an incrementing episode badge. It is a prompt package only: an actual thumbnail image file is not generated yet. The artifact also does not yet contain generated character image files or a rendered MP4.
 
 ## Next production stages
 
