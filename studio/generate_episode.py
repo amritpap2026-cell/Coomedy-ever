@@ -12,6 +12,22 @@ import requests
 ROOT = Path(__file__).resolve().parent
 PROFILE_PATH = ROOT / "characters" / "character_profiles.json"
 
+# Reusable visual system: same layout and brand treatment for every episode.
+THUMBNAIL_TEMPLATE = """THE INNER EDGE? No — this is the AI Comedy Studio series thumbnail.
+Canvas: 16:9 YouTube thumbnail, 1280x720, cinematic photorealistic Nepali comedy.
+Keep the recurring characters' exact approved faces, age, hair and episode wardrobe.
+Composition: two characters large in the foreground on the same Himalayan balcony,
+morning coffee table visible, expressive contrasting reactions, mountain scenery softly
+visible behind them. Keep faces unobstructed and readable at mobile size.
+Brand layout: consistent bold Nepali headline area on the LEFT, character reactions on
+the RIGHT; high contrast, clean hierarchy, same typography treatment and safe margins
+for every episode. Add a small fixed series label: "हिमालको बाल्कोनी".
+Add the episode number as a clear, consistent badge: "EPISODE {episode_number:03d}".
+Use only the episode-specific headline and story moment as changing elements.
+Do not change the template, layout, series label, typography style or character identity.
+No watermark, no extra fingers, no distorted faces, no gibberish text.
+"""
+
 # Keep these IDs aligned with the manual workflow inputs.
 PAIRINGS = {
     "mother_son": ("आमा", "छोरा"),
@@ -171,7 +187,7 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
             {"speaker_id": "A", "text": "...", "start_seconds": 0, "end_seconds": 2}
         ],
         "audio": {"ambience": "...", "sfx": ["..."], "music_mood": "..."},
-        "thumbnail_prompt": "...",
+        "thumbnail_prompt": "Describe only the episode-specific funny moment and a short Nepali headline; do not redesign the fixed template.",
         "youtube_title": "...",
         "description": "...",
         "tags": ["..."],
@@ -350,6 +366,7 @@ def main():
     state_path.write_text(json.dumps(next_state, ensure_ascii=False, indent=2) + chr(10), encoding="utf-8")
     data["series_continuity"] = next_state
     data["series_episode_number"] = next_state["episode_number"]
+    data["thumbnail_episode_number"] = next_state["episode_number"]
     data["series_title"] = next_state["series_title"]
 
     # Attach the authoritative character identities and image prompts to every episode package.
@@ -408,7 +425,17 @@ def main():
         speaker = selected[line["speaker_id"]]["name"]
         lines.append(f"**{speaker}:** {line['text']}")
     (output / "episode.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    (output / "thumbnail_prompt.txt").write_text(data["thumbnail_prompt"].strip() + "\n", encoding="utf-8")
+    thumbnail_template = THUMBNAIL_TEMPLATE.format(episode_number=next_state["episode_number"])
+    thumbnail_package = (
+        f"EPISODE NUMBER: {next_state['episode_number']}\\n"
+        f"EPISODE TITLE: {data['title']}\\n"
+        f"NEPALI HEADLINE: {data.get('thumbnail_headline_ne', data['title'])}\\n\\n"
+        + thumbnail_template
+        + "\\nEPISODE-SPECIFIC SCENE (keep the fixed template unchanged):\\n"
+        + data["thumbnail_prompt"].strip()
+        + "\\n"
+    )
+    (output / "thumbnail_prompt.txt").write_text(thumbnail_package, encoding="utf-8")
     print(f"Generated episode package: {output}")
 
 
