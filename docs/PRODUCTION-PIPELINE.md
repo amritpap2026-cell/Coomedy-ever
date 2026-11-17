@@ -12,6 +12,7 @@
 - Stable character IDs, appearance, signature clothing, personality, mannerisms, Nepali voice descriptions, reference-image prompts and negative prompts.
 - Episode generation loads the selected permanent profiles and includes their identity and image-prompt data in each episode JSON.
 - Gemini-generated shot prompts, speaker-labelled dialogue, subtitle cues, audio notes, thumbnail prompt and metadata.
+- Pair-specific thumbnail prompt package: only the selected two characters appear as the heroes, with their locked identities and selected outfits, fixed AI Mountain Comedy Studio branding, episode-specific Nepali headline, relationship label and incrementing episode badge.
 - Downloadable GitHub Actions artifacts.
 
 ## Not yet implemented
