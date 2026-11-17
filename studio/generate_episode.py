@@ -12,20 +12,27 @@ import requests
 ROOT = Path(__file__).resolve().parent
 PROFILE_PATH = ROOT / "characters" / "character_profiles.json"
 
-# Reusable visual system: same layout and brand treatment for every episode.
-THUMBNAIL_TEMPLATE = """Reusable visual system for the Nepali AI Comedy Studio series.
-Canvas: 16:9 YouTube thumbnail, 1280x720, cinematic photorealistic Nepali comedy.
-Keep the recurring characters' exact approved faces, age, hair and episode wardrobe.
-Composition: two characters large in the foreground on the same Himalayan balcony,
-morning coffee table visible, expressive contrasting reactions, mountain scenery softly
-visible behind them. Keep faces unobstructed and readable at mobile size.
-Brand layout: consistent bold Nepali headline area on the LEFT, character reactions on
-the RIGHT; high contrast, clean hierarchy, same typography treatment and safe margins
-for every episode. Add a small fixed series label: "हिमालको बाल्कोनी".
-Add the episode number as a clear, consistent badge: "EPISODE {episode_number:03d}".
-Use only the episode-specific headline and story moment as changing elements.
-Do not change the template, layout, series label, typography style or character identity.
-No watermark, no extra fingers, no distorted faces, no gibberish text.
+# Reusable visual system: stable studio branding, with the selected pair as the hero.
+THUMBNAIL_TEMPLATE = """AI MOUNTAIN COMEDY STUDIO — FIXED EPISODE THUMBNAIL SYSTEM.
+Canvas: 16:9 YouTube thumbnail, 1280x720, vivid cinematic photorealistic Nepali comedy.
+Show ONLY the two selected main characters for this episode as the clear visual heroes.
+Use their exact permanent approved faces, apparent ages, hair, skin tone, body proportions,
+distinctive details and the exact outfits selected for this episode. Never substitute,
+merge, duplicate or redesign either character. Do not show a collage of other pairings.
+Scene: the familiar Himalayan home balcony, morning coffee, beautiful mountain backdrop,
+warm natural light and believable Nepali home details. The two characters must be large,
+close enough for mobile viewing, with expressive faces and a funny interaction that
+communicates the episode's actual story moment at a glance.
+Branding: keep the fixed "AI MOUNTAIN COMEDY STUDIO" brand mark near the top, consistent
+bold high-contrast typography, clean safe margins and a small "हिमालको बाल्कोनी" series tag.
+Place a short episode-specific Nepali headline in a strong readable banner. Add a consistent
+episode badge reading "EPISODE {episode_number:03d}". Add the selected pair's Nepali
+relationship label as a small readable tag (for example: "आमा – छोरा").
+Keep the same overall brand identity, color language, typography hierarchy and layout
+across episodes. The selected pair, their expressions, the funny story moment and headline
+are the only major changing visual content.
+No watermark, no extra fingers, no distorted faces, no incorrect character identity,
+no extra main characters, no collage, no gibberish text, no clutter.
 """
 
 # Keep these IDs aligned with the manual workflow inputs.
@@ -187,8 +194,8 @@ def build_prompt(fmt, pairing_id, topic, profiles, calendar, series_state):
             {"speaker_id": "A", "text": "...", "start_seconds": 0, "end_seconds": 2}
         ],
         "audio": {"ambience": "...", "sfx": ["..."], "music_mood": "..."},
-        "thumbnail_headline_ne": "छोटो, मौलिक, हास्यास्पद नेपाली headline",
-        "thumbnail_prompt": "Describe only the episode-specific funny moment; do not redesign the fixed template.",
+        "thumbnail_headline_ne": "छोटो, मौलिक, मोबाइलमा सजिलै पढिने नेपाली headline",
+        "thumbnail_prompt": "Describe the exact funny story moment and expressive interaction between ONLY the selected two main characters; preserve their supplied identities and selected outfits. Do not redesign the fixed studio thumbnail template.",
         "youtube_title": "...",
         "description": "...",
         "tags": ["..."],
@@ -428,11 +435,19 @@ def main():
     (output / "episode.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     thumbnail_template = THUMBNAIL_TEMPLATE.format(episode_number=next_state["episode_number"])
     thumbnail_package = (
+        f"STUDIO BRAND: AI MOUNTAIN COMEDY STUDIO\\n"
         f"EPISODE NUMBER: {next_state['episode_number']}\\n"
+        f"EPISODE BADGE: EPISODE {next_state['episode_number']:03d}\\n"
+        f"PAIRING ID: {args.pairing}\\n"
+        f"PAIRING LABEL: {profiles['pairings'][args.pairing]['label_ne']}\\n"
+        f"MAIN CHARACTER A: {selected['A']['name']} | ID: {selected['A']['character_id']} | OUTFIT: {selected_outfits['A']['description']}\\n"
+        f"MAIN CHARACTER B: {selected['B']['name']} | ID: {selected['B']['character_id']} | OUTFIT: {selected_outfits['B']['description']}\\n"
         f"EPISODE TITLE: {data['title']}\\n"
         f"NEPALI HEADLINE: {data.get('thumbnail_headline_ne', data['title'])}\\n\\n"
         + thumbnail_template
-        + "\\nEPISODE-SPECIFIC SCENE (keep the fixed template unchanged):\\n"
+        + "\\nCHARACTER REFERENCE PROMPTS — preserve the exact two identities:\\n"
+        + json.dumps({speaker_id: selected[speaker_id]['reference_image_prompt'] for speaker_id in ('A', 'B')}, ensure_ascii=False)
+        + "\\nEPISODE-SPECIFIC TWO-CHARACTER STORY MOMENT (keep fixed branding unchanged):\\n"
         + data["thumbnail_prompt"].strip()
         + "\\n"
     )
