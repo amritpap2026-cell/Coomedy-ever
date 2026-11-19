@@ -87,11 +87,11 @@ def main() -> None:
             sys.exit(f"Image generation failed for {character_id}: {last_error}")
 
     manifest_path = OUT_DIR / "manifest.json"
-    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + chr(10), encoding="utf-8")
     gallery_lines = ["# ११ स्थायी पात्र — Character Image Gallery", "", f"Model: {model} | Resolution: {args.image_size}", ""]
     for item in manifest["images"]:
         gallery_lines.extend([f"## {item['name_ne']}", f"![{item['name_ne']}]({item['file']})", f"Character ID: `{item['character_id']}`", ""])
-    (OUT_DIR / "GALLERY.md").write_text("\\n".join(gallery_lines), encoding="utf-8")
+    (OUT_DIR / "GALLERY.md").write_text(chr(10).join(gallery_lines), encoding="utf-8")
     print(f"Completed {len(characters)} character image(s). Output: {OUT_DIR}")
 
 if __name__ == "__main__":
