@@ -8,7 +8,7 @@
 
 - Short (30–50 seconds, 9:16) and long (1–2 minutes, 16:9) choices.
 - Five selectable Nepali character pairings.
-- Ten original recurring character profiles in `studio/characters/character_profiles.json`.
+- Legacy ten-adult profiles in `studio/characters/character_profiles.json` remain for compatibility with the original five-pairing episode generator; they are not the final 11-person cast.
 - Stable character IDs, appearance, signature clothing, personality, mannerisms, Nepali voice descriptions, reference-image prompts and negative prompts.
 - Episode generation loads the selected permanent profiles and includes their identity and image-prompt data in each episode JSON.
 - Gemini-generated shot prompts, speaker-labelled dialogue, subtitle cues, audio notes, thumbnail prompt and metadata.
@@ -17,7 +17,7 @@
 
 ## Not yet implemented
 
-1. Actual character reference-image files generated and saved in the repository or asset storage.
+1. Run the new Nano Banana workflow and review/approve the 11 generated master reference images. The code is added, but no images exist until the workflow completes successfully.
 2. Separate Nepali TTS audio files for both speakers.
 3. Consistent avatar video generation per shot.
 4. Speaker-specific lip-sync using each character's own audio.
