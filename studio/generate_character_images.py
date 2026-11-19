@@ -5,7 +5,7 @@ import argparse, base64, json, os, re, sys, time
 from pathlib import Path
 from google import genai
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 CAST_PATH = ROOT / "studio" / "characters" / "cast_11.json"
 OUT_DIR = ROOT / "studio" / "characters" / "generated"
 
