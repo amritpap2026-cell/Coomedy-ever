@@ -71,7 +71,7 @@ def main() -> None:
                 if not image_data:
                     raise RuntimeError("Nano Banana returned no output_image data.")
                 image_bytes = base64.b64decode(image_data)
-                if not image_bytes.startswith(b"\\x89PNG\\r\\n\\x1a\\n"):
+                if not image_bytes.startswith(b"\x89PNG\r\n\x1a\n"):
                     raise RuntimeError("Returned image is not a valid PNG.")
                 target.write_bytes(image_bytes)
                 manifest["images"].append({"character_id": character_id, "name_ne": character["name_ne"], "file": target.name, "status": "generated", "bytes": len(image_bytes)})
