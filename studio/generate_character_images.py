@@ -7,7 +7,7 @@ from google import genai
 
 ROOT = Path(__file__).resolve().parents[2]
 CAST_PATH = ROOT / "studio" / "characters" / "cast_11.json"
-OUT_DIR = ROOT / "output" / "character-reference-images"
+OUT_DIR = ROOT / "studio" / "characters" / "generated"
 
 def safe_id(value: str) -> str:
     return re.sub(r"[^a-zA-Z0-9_-]", "_", value)
