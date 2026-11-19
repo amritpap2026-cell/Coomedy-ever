@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "note": "The 11-person main cast for this series. Names for the two female friends are provisional placeholders and may be renamed. Main character is set to age 34; existing child ages (10 and 6) are inherited from the previous character bible pending user changes.",
+  "cast": [
+    {
+      "character_id": "buba_hari_01",
+      "name_ne": "बुबा",
+      "role_ne": "बुबा",
+      "age": "late 50s",
+      "reference_image_prompt": "Photorealistic consistent character portrait of Hariprasad, a Nepali father in his late 50s, broad friendly face, softly square jaw, deep-set brown eyes, medium brown skin, subtle smile lines, short salt-and-pepper hair neatly side-combed, neatly trimmed salt-and-pepper moustache, thin rectangular reading glasses. Light cream daura-suruwal style shirt and slate-grey sleeveless waistcoat. Patient amused expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+      "negative_prompt": "different person, thick beard, no glasses, modern suit, changed waistcoat, exaggerated age, cartoon, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "ama_sushila_01",
+      "name_ne": "आमा",
+      "role_ne": "आमा",
+      "age": "early 50s",
+      "reference_image_prompt": "Photorealistic consistent character portrait of Sushila, a Nepali mother in her early 50s, warm oval face, medium warm-brown skin, kind dark-brown eyes, small beauty mark near left cheek, black hair with a few silver strands in a neat low bun with center part, small red tika, tiny gold nose stud, deep teal kurta and muted maroon shawl. Calm witty expression. Chest-up, facing camera, soft natural Himalayan morning light, realistic skin texture, cinematic portrait, neutral uncluttered balcony background. Preserve this exact identity in all future images.",
+      "negative_prompt": "different person, younger face, changed hairstyle, loose hair, changed outfit, heavy makeup, exaggerated wrinkles, cartoon, anime, plastic skin, extra fingers, distorted hands, text, watermark"
+    },
+    {
+      "character_id": "shreeman_bikash_01",
+      "name_ne": "मुख्य पात्र",
+      "role_ne": "मुख्य पात्र (उमेर ३४)",
+      "age": "34 years old",
+      "reference_image_prompt": "Photorealistic consistent character portrait of an original Nepali man aged exactly 34, rectangular face, friendly strong jawline, expressive brown eyes, medium tan skin, short black hair with tidy side fade and slightly wavy top, short neat stubble, small left-cheek crease when smiling. Forest-green casual overshirt over plain white T-shirt. Confident relaxed expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve this original fictional identity exactly.",
+      "negative_prompt": "different person, long beard, long hair, changed overshirt, tie, suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "shreemati_mina_01",
+      "name_ne": "श्रीमती",
+      "role_ne": "श्रीमती",
+      "age": "early 30s",
+      "reference_image_prompt": "Photorealistic consistent character portrait of Mina, a Nepali woman in her early 30s, soft diamond-shaped face, alert dark-brown eyes, defined eyebrows, medium warm-brown skin, black shoulder-length softly waved hair tucked behind right ear, tiny maroon bindi, small gold hoop earrings. Indigo-blue kurta and muted mustard scarf. Calm knowing smile. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+      "negative_prompt": "different person, long hair, changed hairstyle, changed scarf, heavy jewellery, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "bahini_prakriti_01",
+      "name_ne": "कान्छी बहिनी",
+      "role_ne": "कान्छी बहिनी",
+      "age": "early 20s",
+      "reference_image_prompt": "Photorealistic consistent character portrait of Prakriti, a Nepali woman in her early 20s, round-oval face, lively dark-brown eyes, expressive eyebrows, medium warm Nepali skin, long black hair in a single neat braid over left shoulder, small blue hair tie, tiny silver nose pin. Lavender kurta and white cotton scarf. Mischievous friendly grin. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, uncluttered balcony background. Preserve exact identity.",
+      "negative_prompt": "different person, loose hair, ponytail, changed braid, changed outfit, heavy makeup, cartoon, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "child_son_aarav_01",
+      "name_ne": "छोरा",
+      "role_ne": "छोरा",
+      "age": "10 years old",
+      "reference_image_prompt": "Photorealistic consistent full-body character reference of Aarav, a 10-year-old Nepali boy, softly rounded oval face, bright dark-brown eyes, small right-cheek dimple, medium warm-brown skin, short thick black hair with softly side-swept fringe, tiny faint freckle below left eye. Age-appropriate child proportions, natural modest styling, warm friendly expression, soft Himalayan morning light, realistic skin texture, cinematic photography. Preserve exact identity and child age at the story's starting point.",
+      "negative_prompt": "adult body, teenager, facial hair, different child, changed face, exaggerated cartoon proportions, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "child_daughter_aarohi_01",
+      "name_ne": "छोरी",
+      "role_ne": "छोरी",
+      "age": "6 years old",
+      "reference_image_prompt": "Photorealistic consistent full-body character reference of Aarohi, a 6-year-old Nepali girl, small heart-shaped face, large dark-brown eyes, soft round cheeks, bright dimpled smile, medium-light warm Nepali skin, straight black hair in two neat shoulder-length braids tied with small teal ribbons, soft fringe, tiny beauty mark near right temple, small silver stud earrings. Clearly age-appropriate child proportions and modest clothing, soft Himalayan morning light, realistic skin texture, cinematic photography. Preserve exact identity and child age at the story's starting point.",
+      "negative_prompt": "adult body, teenager, mature makeup, sexualized clothing or pose, different child, changed face, anime, cartoon, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "sathi_nischal_01",
+      "name_ne": "साथी १",
+      "role_ne": "साथी",
+      "age": "late 20s",
+      "reference_image_prompt": "Photorealistic consistent character portrait of Nischal, a Nepali man in his late 20s, long oval face, bright observant eyes, medium tan skin, short naturally wavy black hair slightly messy at front, thin black rectangular glasses, faint moustache. Cobalt-blue plain sweatshirt with no logo. Enthusiastic friendly expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, rooftop balcony background. Preserve exact identity.",
+      "negative_prompt": "different person, no glasses, thick beard, changed hairstyle, changed sweatshirt, logo, cartoon, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "sathi_ujjwal_01",
+      "name_ne": "साथी २",
+      "role_ne": "साथी",
+      "age": "late 20s",
+      "reference_image_prompt": "Photorealistic consistent character portrait of Ujjwal, a Nepali man in his late 20s, broad oval face, steady dark-brown eyes, medium-deep brown skin, subtle left-cheek dimple, short neatly trimmed black hair with natural hairline, neatly shaped short beard, tiny silver stud in left ear. Charcoal-grey checked casual shirt with sleeves folded once. Calm amused expression. Chest-up, facing camera, soft Himalayan morning light, realistic skin texture, cinematic portrait, rooftop balcony background. Preserve exact identity.",
+      "negative_prompt": "different person, clean-shaven, long beard, long hair, changed shirt, suit, cartoon, anime, plastic skin, extra fingers, text, watermark"
+    },
+    {
+      "character_id": "wife_friend_ritu_01",
+      "name_ne": "रितु (श्रीमतीकी साथी)",
+      "role_ne": "श्रीमतीकी मिल्ने साथी",
+      "age": "late 20s",
+      "reference_image_prompt": "Create an original fictional Nepali woman in her late 20s, clearly distinct from all other women in this cast. Oval face with softly defined cheekbones, expressive dark-brown eyes, medium warm Nepali skin, long naturally wavy black hair worn loose with a subtle side part, small understated silver earrings, no heavy makeup. Contemporary elegant casual clothing: muted terracotta kurta with a cream light cardigan. Warm confident smile with a mischievous glint. Chest-up portrait, facing camera, soft natural Himalayan morning light, realistic pores and skin texture, lifelike eyes and hair strands, professional cinematic photography, neutral uncluttered Nepali home balcony background, photorealistic, high detail, consistent original character identity. One person only.",
+      "negative_prompt": "different person, duplicate face, older woman, child, heavy makeup, glamour retouching, plastic skin, cartoon, anime, extra fingers, distorted anatomy, text, logo, watermark"
+    },
+    {
+      "character_id": "sister_friend_sandhya_01",
+      "name_ne": "सन्ध्या (बहिनीकी साथी)",
+      "role_ne": "कान्छी बहिनीकी मिल्ने साथी",
+      "age": "early 20s",
+      "reference_image_prompt": "Create an original fictional Nepali woman in her early 20s, clearly distinct from every other woman in this cast. Slightly heart-shaped face, alert dark-brown eyes, medium-light golden Nepali skin, straight black hair cut to shoulder length with a neat centre part and tucked behind one ear, a tiny tasteful nose pin, natural minimal makeup. Casual youthful clothing: sage-green cotton shirt over a simple cream top. Bright intelligent smile, relaxed confident expression. Chest-up portrait, facing camera, soft natural Himalayan morning light, realistic skin pores, lifelike eyes and individual hair strands, professional cinematic photography, neutral uncluttered Nepali home balcony background, photorealistic, high detail, consistent original character identity. One person only.",
+      "negative_prompt": "different person, duplicate face, older woman, child, heavy makeup, glamour retouching, plastic skin, cartoon, anime, extra fingers, distorted anatomy, text, logo, watermark"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "buba_hari_01",
+      "type": "father_of",
+      "to": "shreeman_bikash_01"
+    },
+    {
+      "from": "ama_sushila_01",
+      "type": "mother_of",
+      "to": "shreeman_bikash_01"
+    },
+    {
+      "from": "buba_hari_01",
+      "type": "father_of",
+      "to": "bahini_prakriti_01"
+    },
+    {
+      "from": "ama_sushila_01",
+      "type": "mother_of",
+      "to": "bahini_prakriti_01"
+    },
+    {
+      "from": "shreeman_bikash_01",
+      "type": "spouse_of",
+      "to": "shreemati_mina_01"
+    },
+    {
+      "from": "shreeman_bikash_01",
+      "type": "father_of",
+      "to": "child_son_aarav_01"
+    },
+    {
+      "from": "shreeman_bikash_01",
+      "type": "father_of",
+      "to": "child_daughter_aarohi_01"
+    },
+    {
+      "from": "shreemati_mina_01",
+      "type": "mother_of",
+      "to": "child_son_aarav_01"
+    },
+    {
+      "from": "shreemati_mina_01",
+      "type": "mother_of",
+      "to": "child_daughter_aarohi_01"
+    },
+    {
+      "from": "shreeman_bikash_01",
+      "type": "older_brother_of",
+      "to": "bahini_prakriti_01"
+    },
+    {
+      "from": "sathi_nischal_01",
+      "type": "friend_of",
+      "to": "shreeman_bikash_01"
+    },
+    {
+      "from": "sathi_ujjwal_01",
+      "type": "friend_of",
+      "to": "shreeman_bikash_01"
+    },
+    {
+      "from": "wife_friend_ritu_01",
+      "type": "close_friend_of",
+      "to": "shreemati_mina_01"
+    },
+    {
+      "from": "sister_friend_sandhya_01",
+      "type": "close_friend_of",
+      "to": "bahini_prakriti_01"
+    }
+  ]
+}
