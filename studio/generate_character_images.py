@@ -20,16 +20,19 @@ def main() -> None:
     parser.add_argument("--force", action="store_true", help="Regenerate even if an image already exists")
     args = parser.parse_args()
 
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
-    if not api_key:
-        sys.exit("Missing GEMINI_API_KEY Actions secret.")
-    # HTTP headers cannot contain control characters or embedded whitespace.
-    # Never print the key itself; only report safe validation metadata.
-    if not api_key.isascii() or any(ord(ch) < 33 or ord(ch) > 126 for ch in api_key):
-        sys.exit(
-            "GEMINI_API_KEY contains whitespace, a newline, or non-ASCII characters. "
-            "Re-save the Repository Secret using the raw API key only (no quotes or 'Bearer ')."
-        )
+    # Prefer the user's numbered key pool; retain the legacy single-key fallback.
+    api_keys = []
+    for key_name in [f"GEMINI_API_KEY_{i}" for i in range(1, 6)] + ["GEMINI_API_KEY"]:
+        value = os.getenv(key_name, "").strip()
+        if not value:
+            continue
+        if not value.isascii() or any(ord(ch) < 33 or ord(ch) > 126 for ch in value):
+            print(f"Skipping {key_name}: contains whitespace/control/non-ASCII characters.", file=sys.stderr)
+            continue
+        api_keys.append((key_name, value))
+    if not api_keys:
+        sys.exit("No usable Gemini key found. Add GEMINI_API_KEY_1 through GEMINI_API_KEY_5 as Repository secrets.")
+
     model = os.getenv("GEMINI_IMAGE_MODEL", "gemini-nano-banana-2.1").strip()
     cast_data = json.loads(CAST_PATH.read_text(encoding="utf-8"))
     characters = cast_data["cast"]
@@ -39,7 +42,6 @@ def main() -> None:
             sys.exit(f"Unknown character_id: {args.character}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    client = genai.Client(api_key=api_key)
     manifest = {"model": model, "image_size": args.image_size, "aspect_ratio": args.aspect_ratio, "images": []}
 
     for index, character in enumerate(characters, start=1):
@@ -61,8 +63,9 @@ def main() -> None:
             + "\n\nAVOID: " + character["negative_prompt"]
         )
         last_error = None
-        for attempt in range(1, 4):
+        for key_name, key_value in api_keys:
             try:
+                client = genai.Client(api_key=key_value)
                 result = client.interactions.create(
                     model=model,
                     input=prompt,
@@ -78,27 +81,17 @@ def main() -> None:
                 if not image_data:
                     raise RuntimeError("Nano Banana returned no output_image data.")
                 image_bytes = base64.b64decode(image_data)
-                if not image_bytes.startswith(b"\x89PNG\r\n\x1a\n"):
+                if not image_bytes.startswith(b"\\x89PNG\\r\\n\\x1a\\n"):
                     raise RuntimeError("Returned image is not a valid PNG.")
                 target.write_bytes(image_bytes)
-                manifest["images"].append({"character_id": character_id, "name_ne": character["name_ne"], "file": target.name, "status": "generated", "bytes": len(image_bytes)})
-                print(f"[{index}/{len(characters)}] GENERATED: {target.name} ({len(image_bytes)} bytes)")
+                manifest["images"].append({"character_id": character_id, "name_ne": character["name_ne"], "file": target.name, "status": "generated", "bytes": len(image_bytes), "key_slot": key_name})
+                print(f"[{index}/{len(characters)}] GENERATED: {target.name} using {key_name} ({len(image_bytes)} bytes)")
                 last_error = None
                 break
             except Exception as exc:
                 last_error = exc
-                message = str(exc)
-                # Header construction errors are deterministic; retrying cannot fix them.
-                if "Illegal header value" in message:
-                    sys.exit(
-                        "Gemini API request could not construct an HTTP header. "
-                        "The secret is present but its value is not accepted as a header. "
-                        "Check that GEMINI_API_KEY contains only the raw key, with no quotes, "
-                        "Bearer prefix, spaces, or line breaks. The key value is never printed."
-                    )
-                print(f"Attempt {attempt}/3 failed for {character_id}: {exc}", file=sys.stderr)
-                if attempt < 3:
-                    time.sleep(attempt * 5)
+                print(f"{key_name} failed for {character_id}: {exc}", file=sys.stderr)
+                continue
         if last_error:
             sys.exit(f"Image generation failed for {character_id}: {last_error}")
 
