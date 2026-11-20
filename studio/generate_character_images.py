@@ -23,6 +23,13 @@ def main() -> None:
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
     if not api_key:
         sys.exit("Missing GEMINI_API_KEY Actions secret.")
+    # HTTP headers cannot contain control characters or embedded whitespace.
+    # Never print the key itself; only report safe validation metadata.
+    if not api_key.isascii() or any(ord(ch) < 33 or ord(ch) > 126 for ch in api_key):
+        sys.exit(
+            "GEMINI_API_KEY contains whitespace, a newline, or non-ASCII characters. "
+            "Re-save the Repository Secret using the raw API key only (no quotes or 'Bearer ')."
+        )
     model = os.getenv("GEMINI_IMAGE_MODEL", "gemini-nano-banana-2.1").strip()
     cast_data = json.loads(CAST_PATH.read_text(encoding="utf-8"))
     characters = cast_data["cast"]
@@ -80,6 +87,15 @@ def main() -> None:
                 break
             except Exception as exc:
                 last_error = exc
+                message = str(exc)
+                # Header construction errors are deterministic; retrying cannot fix them.
+                if "Illegal header value" in message:
+                    sys.exit(
+                        "Gemini API request could not construct an HTTP header. "
+                        "The secret is present but its value is not accepted as a header. "
+                        "Check that GEMINI_API_KEY contains only the raw key, with no quotes, "
+                        "Bearer prefix, spaces, or line breaks. The key value is never printed."
+                    )
                 print(f"Attempt {attempt}/3 failed for {character_id}: {exc}", file=sys.stderr)
                 if attempt < 3:
                     time.sleep(attempt * 5)
