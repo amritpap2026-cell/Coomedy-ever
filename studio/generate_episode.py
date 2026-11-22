@@ -300,17 +300,20 @@ def main():
     args = parser.parse_args()
 
     profiles = load_profiles()
-    raw_key = os.getenv("GEMINI_API_KEY", "")
-    # Normalize invisible whitespace safely; never print or expose the secret.
-    key = "".join(raw_key.split())
-    if not key:
-        sys.exit("Missing GEMINI_API_KEY Actions secret.")
-    try:
-        key.encode("ascii")
-    except UnicodeEncodeError:
-        sys.exit("GEMINI_API_KEY contains non-ASCII characters. Re-save the repository secret as the exact one-line key.")
-    if any(ord(ch) < 33 or ord(ch) > 126 for ch in key):
-        sys.exit("GEMINI_API_KEY contains invalid control characters. Re-save the repository secret.")
+    # Read all 16 numbered repository secrets, then retain the legacy key as a fallback.
+    api_keys = []
+    for index in range(1, 17):
+        raw_key = os.getenv(f"GEMINI_API_KEY_{index}", "")
+        key = "".join(raw_key.split())
+        if key and key.isascii() and all(33 <= ord(ch) <= 126 for ch in key):
+            api_keys.append((f"GEMINI_API_KEY_{index}", key))
+        elif raw_key:
+            print(f"Skipping GEMINI_API_KEY_{index}: invalid characters; key value is never displayed.")
+    legacy_key = "".join(os.getenv("GEMINI_API_KEY", "").split())
+    if legacy_key and legacy_key.isascii() and all(33 <= ord(ch) <= 126 for ch in legacy_key):
+        api_keys.append(("GEMINI_API_KEY", legacy_key))
+    if not api_keys:
+        sys.exit("No usable Gemini key found. Add GEMINI_API_KEY_1 through GEMINI_API_KEY_16 as Repository secrets.")
     model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     calendar = load_nepali_calendar(args.date)
@@ -343,11 +346,30 @@ def main():
             "responseMimeType": "application/json",
         },
     }
-    response = requests.post(
-        url, headers={"x-goog-api-key": key}, json=payload, timeout=120
-    )
-    if not response.ok:
-        sys.exit(f"Gemini API HTTP {response.status_code}: {response.text[:1200]}")
+    response = None
+    failures = []
+    for secret_name, key in api_keys:
+        try:
+            candidate_response = requests.post(
+                url, headers={"x-goog-api-key": key}, json=payload, timeout=120
+            )
+        except requests.RequestException as exc:
+            failures.append(f"{secret_name}: network error ({type(exc).__name__})")
+            continue
+        if candidate_response.ok:
+            response = candidate_response
+            print(f"Gemini request succeeded using {secret_name}.")
+            break
+        try:
+            error_body = candidate_response.json()
+            error_message = error_body.get("error", {}).get("message", "API request failed")
+            error_reason = error_body.get("error", {}).get("details", [{}])[0].get("reason", "")
+        except (ValueError, AttributeError, IndexError):
+            error_message, error_reason = "API request failed", ""
+        failures.append(f"{secret_name}: HTTP {candidate_response.status_code} {error_reason} {error_message[:180]}")
+        # Try the next key for invalid-key, quota, permission, and transient API errors.
+    if response is None:
+        sys.exit("All configured Gemini keys failed:\n" + "\n".join(failures))
     try:
         data = json.loads(response.json()["candidates"][0]["content"]["parts"][0]["text"])
     except (KeyError, IndexError, TypeError, ValueError) as exc:
