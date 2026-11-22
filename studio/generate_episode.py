@@ -302,7 +302,7 @@ def main():
     profiles = load_profiles()
     # Read all 16 numbered repository secrets, then retain the legacy key as a fallback.
     api_keys = []
-    for index in range(1, 17):
+    for index in range(1, 21):
         raw_key = os.getenv(f"GEMINI_API_KEY_{index}", "")
         key = "".join(raw_key.split())
         if key and key.isascii() and all(33 <= ord(ch) <= 126 for ch in key):
@@ -313,7 +313,7 @@ def main():
     if legacy_key and legacy_key.isascii() and all(33 <= ord(ch) <= 126 for ch in legacy_key):
         api_keys.append(("GEMINI_API_KEY", legacy_key))
     if not api_keys:
-        sys.exit("No usable Gemini key found. Add GEMINI_API_KEY_1 through GEMINI_API_KEY_16 as Repository secrets.")
+        sys.exit("No usable Gemini key found. Add GEMINI_API_KEY_1 through GEMINI_API_KEY_20 as Repository secrets.")
     # Free-tier-only model order. Do not silently switch to paid-only models.
     free_models = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
     requested_model = os.getenv("GEMINI_MODEL", "").strip()
