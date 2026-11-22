@@ -1,40 +1,29 @@
 {
-  "series_title": "हिमालको बाल्कोनी — कहिल्यै नसकिने गफ",
-  "episode_number": 0,
-  "story_day": 0,
-  "timeline_summary": "कथा सुरु हुँदैछ। सबै पात्र आफ्नो स्थापित जीवन र सम्बन्धसहित एउटै निरन्तर संसारमा छन्।",
-  "previous_episode_recap": "",
-  "current_situation": "मुख्य पात्रहरूको दैनिक जीवन निरन्तर अघि बढिरहेको छ।",
-  "character_state": {},
-  "ongoing_story_arcs": [],
-  "unresolved_threads": [],
-  "running_gags": [],
-  "recent_premises": [],
-  "last_episode_date_ad": "",
-  "last_episode_title": "",
-  "continuity_rules": [
-    "कथा कहिल्यै reset वा समाप्त हुँदैन।",
-    "हरेक episode अघिल्लो episode को घटनाको प्रत्यक्ष परिणामबाट सुरु हुन्छ।",
-    "पात्रले अघिल्लो घटनाको सम्झना, निर्णय र परिणाम बिर्सँदैनन्।",
-    "हरेक भागमा समय अगाडि बढ्छ र सम्बन्ध तथा परिस्थिति क्रमशः विकसित हुन्छन्।",
-    "एउटा ठूलो कथा-धागो लामो समय चल्छ; सबै समस्या एउटै भागमा समाधान हुँदैनन्।",
-    "हरेक भागमा छुट्टै हास्यपूर्ण punchline र अर्को भाग तर्फ तान्ने cliffhanger वा खुला hook हुन्छ।",
-    "चाडपर्व र विशेष दिनहरू यही निरन्तर timeline भित्र आउँछन्, random reset हुँदैनन्।",
-    "आरव (१० वर्ष) र आरोही (६ वर्ष) स्थायी बाल पात्र हुन् र एउटै निरन्तर कथासंसारमा रहन्छन्।",
-    "दुवै बाल पात्रको उमेर कथामा बितेको वास्तविक समयअनुसार मात्र बढ्छ; Episode संख्या बढेको आधारमा उमेर नबढाउनु।",
-    "कथामा एक वर्ष बितेमा दुवैको उमेर एक वर्ष बढ्छ; अनुहार, पहिचान र सम्बन्ध निरन्तर रहन्छ।"
+  "story_elapsed_years": 0.0,
+  "timeline_summary": "कथा सुरु हुँदैछ। पहिलो एपिसोडमा रोहनको जिम जाने उत्साह र आमाको ट्रेडमिलको सम्झनासँगै हास्यपूर्ण संवादको श्रीगणेश भएको छ।",
+  "previous_episode_recap": "कथाको सुरुवात भएको छ, सबै पात्र आफ्नो स्थापित जीवन र सम्बन्धसहित बाल्कोनीमा छन्।",
+  "current_situation": "रोहनको जिम जाने नयाँ संकल्प आमाको घरव्यवहारको यथार्थसँग ठोक्किएको छ।",
+  "character_state": {
+    "ama_sushila_01": "Relaxed, observant, holding the upper hand with dry humor.",
+    "chhoro_rohan_01": "Slightly embarrassed after getting caught in his own fitness talk."
+  },
+  "ongoing_story_arcs": [
+    "रोहनको फिटनेस र देखावटी बानीमा सुधार ल्याउने आमाको प्रयास"
   ],
-  "story_elapsed_years": 0,
-  "recurring_children": {
-    "child_son_aarav_01": {
-      "name": "आरव",
-      "starting_age_years": 10,
-      "current_age_years": 10
-    },
-    "child_daughter_aarohi_01": {
-      "name": "आरोही",
-      "starting_age_years": 6,
-      "current_age_years": 6
-    }
-  }
+  "unresolved_threads": [
+    "के रोहन वास्तवमै जिम जान्ला वा ट्रेडमिल फेरि कपडा सुकाउने ठाउँ नै बनिरहला?"
+  ],
+  "running_gags": [
+    "व्यायामका महँगा सामानहरू घरमा सुकाउने स्ट्यान्ड बन्नु"
+  ],
+  "recent_premises": [
+    "बिहानको बाल्कोनीमा कफी पिउँदै रोहनले जिम जाने नयाँ प्लान सुनाउँछ, तर आमाको एक वाक्यले उसको वर्षौंको जोस तुरुन्तै पानी बन्छ।"
+  ],
+  "new_episode_hook": "रोहन बिलहरू मिलाउन जान्छ कि अर्को कुनै नयाँ बहाना निकाल्छ? अर्को भागमा हेर्नुहोस्!",
+  "episode_number": 1,
+  "story_day": 1,
+  "last_episode_date_ad": "2026-11-16",
+  "last_episode_title": "कफीको कप र कसम",
+  "last_pairing": "mother_son",
+  "series_title": "हिमालको बाल्कोनी — कहिल्यै नसकिने गफ"
 }
