@@ -52,6 +52,7 @@ jobs:
           GEMINI_API_KEY_18: ${{ secrets.GEMINI_API_KEY_18 }}
           GEMINI_API_KEY_19: ${{ secrets.GEMINI_API_KEY_19 }}
           GEMINI_API_KEY_20: ${{ secrets.GEMINI_API_KEY_20 }}
+          GEMINI_KEYS: ${{ secrets.GEMINI_KEYS }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.8-flash' }}
         run: python studio/generate_episode.py --format "${{ inputs.format }}" --pairing "${{ inputs.pairing }}" --topic "${{ inputs.topic }}"
