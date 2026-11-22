@@ -300,9 +300,17 @@ def main():
     args = parser.parse_args()
 
     profiles = load_profiles()
-    key = os.getenv("GEMINI_API_KEY", "").strip()
+    raw_key = os.getenv("GEMINI_API_KEY", "")
+    # Normalize invisible whitespace safely; never print or expose the secret.
+    key = "".join(raw_key.split())
     if not key:
         sys.exit("Missing GEMINI_API_KEY Actions secret.")
+    try:
+        key.encode("ascii")
+    except UnicodeEncodeError:
+        sys.exit("GEMINI_API_KEY contains non-ASCII characters. Re-save the repository secret as the exact one-line key.")
+    if any(ord(ch) < 33 or ord(ch) > 126 for ch in key):
+        sys.exit("GEMINI_API_KEY contains invalid control characters. Re-save the repository secret.")
     model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     calendar = load_nepali_calendar(args.date)
