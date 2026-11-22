@@ -314,8 +314,17 @@ def main():
         api_keys.append(("GEMINI_API_KEY", legacy_key))
     if not api_keys:
         sys.exit("No usable Gemini key found. Add GEMINI_API_KEY_1 through GEMINI_API_KEY_16 as Repository secrets.")
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    # Free-tier-only model order. Do not silently switch to paid-only models.
+    free_models = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+    requested_model = os.getenv("GEMINI_MODEL", "").strip()
+    if requested_model:
+        if requested_model not in free_models:
+            sys.exit(
+                "GEMINI_MODEL must be one of the free-tier models: "
+                + ", ".join(free_models)
+            )
+        free_models = [requested_model] + [m for m in free_models if m != requested_model]
+
     calendar = load_nepali_calendar(args.date)
     state_path = ROOT / "series_state.json"
     series_state = json.loads(state_path.read_text(encoding="utf-8"))
@@ -348,28 +357,38 @@ def main():
     }
     response = None
     failures = []
-    for secret_name, key in api_keys:
-        try:
-            candidate_response = requests.post(
-                url, headers={"x-goog-api-key": key}, json=payload, timeout=120
+    # Try each free model, then every configured key. Never attempt a paid-tier model.
+    for model in free_models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        for secret_name, key in api_keys:
+            try:
+                candidate_response = requests.post(
+                    url, headers={"x-goog-api-key": key}, json=payload, timeout=120
+                )
+            except requests.RequestException as exc:
+                failures.append(f"{model} / {secret_name}: network error ({type(exc).__name__})")
+                continue
+            if candidate_response.ok:
+                response = candidate_response
+                print(f"Gemini request succeeded with free model {model} using {secret_name}.")
+                break
+            try:
+                error_body = candidate_response.json()
+                error_message = error_body.get("error", {}).get("message", "API request failed")
+                error_reason = error_body.get("error", {}).get("details", [{}])[0].get("reason", "")
+            except (ValueError, AttributeError, IndexError):
+                error_message, error_reason = "API request failed", ""
+            failures.append(
+                f"{model} / {secret_name}: HTTP {candidate_response.status_code} "
+                f"{error_reason} {error_message[:180]}"
             )
-        except requests.RequestException as exc:
-            failures.append(f"{secret_name}: network error ({type(exc).__name__})")
-            continue
-        if candidate_response.ok:
-            response = candidate_response
-            print(f"Gemini request succeeded using {secret_name}.")
+        if response is not None:
             break
-        try:
-            error_body = candidate_response.json()
-            error_message = error_body.get("error", {}).get("message", "API request failed")
-            error_reason = error_body.get("error", {}).get("details", [{}])[0].get("reason", "")
-        except (ValueError, AttributeError, IndexError):
-            error_message, error_reason = "API request failed", ""
-        failures.append(f"{secret_name}: HTTP {candidate_response.status_code} {error_reason} {error_message[:180]}")
-        # Try the next key for invalid-key, quota, permission, and transient API errors.
     if response is None:
-        sys.exit("All configured Gemini keys failed:\n" + "\n".join(failures))
+        sys.exit(
+            "All free-tier Gemini model/key combinations failed. "
+            "No paid model was attempted.\n" + "\n".join(failures)
+        )
     try:
         data = json.loads(response.json()["candidates"][0]["content"]["parts"][0]["text"])
     except (KeyError, IndexError, TypeError, ValueError) as exc:
