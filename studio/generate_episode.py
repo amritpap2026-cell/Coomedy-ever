@@ -300,8 +300,33 @@ def main():
     args = parser.parse_args()
 
     profiles = load_profiles()
-    # Read all 16 numbered repository secrets, then retain the legacy key as a fallback.
+    # Read one multiline GEMINI_KEYS repository secret containing lines like
+    # GEMINI_API_KEY_1=AQ... through GEMINI_API_KEY_20=AQ...
     api_keys = []
+    bundled_keys = os.getenv("GEMINI_KEYS", "")
+    for line_number, line in enumerate(bundled_keys.splitlines(), start=1):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        secret_name, separator, raw_key = line.partition("=")
+        if not separator or not secret_name.startswith("GEMINI_API_KEY_"):
+            print(f"Skipping malformed GEMINI_KEYS line {line_number}; key value is never displayed.")
+            continue
+        try:
+            index = int(secret_name.removeprefix("GEMINI_API_KEY_"))
+        except ValueError:
+            print(f"Skipping malformed GEMINI_KEYS line {line_number}; key value is never displayed.")
+            continue
+        if not 1 <= index <= 20:
+            print(f"Skipping out-of-range GEMINI_KEYS line {line_number}; key value is never displayed.")
+            continue
+        key = "".join(raw_key.split())
+        if key and key.isascii() and all(33 <= ord(ch) <= 126 for ch in key):
+            api_keys.append((secret_name, key))
+        elif raw_key:
+            print(f"Skipping {secret_name}: invalid characters; key value is never displayed.")
+
+    # Backward compatibility: still accept separately named secrets.
     for index in range(1, 21):
         raw_key = os.getenv(f"GEMINI_API_KEY_{index}", "")
         key = "".join(raw_key.split())
